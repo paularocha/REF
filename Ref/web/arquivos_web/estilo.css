@@ -1,0 +1,216 @@
+/* 
+    Documento   : estilo.css
+    Criado em : 30/11/2013
+    Autor     : edivandro
+
+*/
+@charset "UTF-8";
+
+/*=== ESTILOS GERAIS =========================================================*/
+root { display: block; }
+* { margin: 0; padding: 0; }
+/** { margin: 0; padding: 0; border: 1px solid #000;}*/
+section, header, nav, article, footer { display: block; }
+html { overflow-y: scroll; }
+body { background: #DCDCDC; color: #000; }
+a { text-decoration: none; color: #000; outline: none; }
+
+/*=== BARRA SUPERIOR =========================================================*/
+section#barra-superior {
+    top: 0;
+    z-index: 999;
+    width: 1327px;
+    height:140px;
+    padding: 10px;
+    color: #FFF;
+    background: #128291 url("../arquivos_web/imagens/imagem_topo.png") no-repeat right top;
+    background-size: 100% 100%;
+/*    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;*/
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#000333', endColorstr='#222222', GradientType=0);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+       -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+
+section#barra-superior a { color: #FFF; }
+/*section#barra-superior div#titulo { float: top; margin-top: -5px; margin-right: 20px; height: 124px;}*/
+section#barra-superior div#menu-login { height: 25px; margin-top: 116px;}
+section#barra-superior nav { float: right; margin-right: 120px; }
+section#barra-superior nav a { font-size: larger; padding: 10px;}
+section#barra-superior nav a:hover { background: #4D79FF; }
+section#barra-superior div#usuario { float: left; padding-right: 20px; }
+
+/*=== BARRA INFERIOR =========================================================*/
+section#barra-inferior {
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    height: 22px;
+    padding: 10px;
+    text-align: center;
+    /*font-size: small;*/
+    color: #3890b8;
+    background-image: -moz-linear-gradient(top, #4D79FF, #3890b8);
+    background-image: -ms-linear-gradient(top, #4D79FF, #3890b8);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4D79FF), to(#3890b8));
+    background-image: -webkit-linear-gradient(top, #4D79FF, #3890b8);
+    background-image: -o-linear-gradient(top, #4D79FF, #3890b8);
+    background-image: linear-gradient(top, #4D79FF, #3890b8);
+}
+section#barra-inferior a { color: #FFF; }
+
+/*=== CORPO (entre as barras superior e inferior) ============================*/
+section.site {
+    top: 160px;
+    /*width: 960px;*/
+    margin: 0 auto;
+    margin-bottom: 100px;
+    padding: 5px;
+    clear: both;
+    /*border: 1px #999 solid;*/
+}
+
+
+/*=== CABEÇALHO DO CORPO =====================================================*/
+header.site { background: #FFF; }
+h1.site { text-align: center; padding: 10px; }
+h1.site a { color: #000; }
+
+/*=== BARRA LATERAL ==========================================================*/
+aside { position: fixed; float: left; width:230px;}
+aside nav.site { 
+    padding: 10px;
+    background-color: #3890b8;
+    border-radius: 8px;
+}
+aside nav.site ul li {
+    text-align: left;
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+aside nav.site ul li a {
+/*    border-left: 1px dashed #fff;
+    border-right: 1px dashed #fff;*/
+    text-decoration: none; color: #fff; text-align: left; font-weight: bold;
+    padding: 0 16px;
+}
+aside nav.site ul li a:hover {color: mediumblue; }
+
+/*=== RODAPÉ DO CORPO ========================================================*/
+footer.site { font-size: small; padding: 10px; clear: both; }
+
+/*=== CONTAINER DAS AÇÕES ====================================================*/
+section.pagina { width: 898px; margin-left: 260px; padding: 30px;
+    background: #fff; float: left; line-height: 40px;
+/*    border: 2px dashed #1E90FF;*/
+    border-radius: 8px;
+}
+
+/*=== ESTILOS DAS AÇÕES ESPECÍFICAS ==========================================*/
+div.login
+{
+    clear: both;
+    position: relative;
+    float: none;
+    width: 400px;
+    margin: 0 200px;
+    display: inline-block;
+}
+
+div.login form fieldset legend
+{
+    margin: 10px 30px;
+    padding: 0 10px;
+    width: auto;
+}
+
+
+/* CONTATO */
+#contato_index textarea { width: 60%; height: 10em; }
+#contato_index .error { float: left; }
+#contato_index input[class="error"]:focus { border-color: #E9322D; box-shadow: 0 0 6px #F8B9B7; }
+#contato_index textarea[class="error"]:focus { border-color: #E9322D; box-shadow: 0 0 6px #F8B9B7; }
+#contato_index label.error { color: red; margin-left: 1em; }
+
+
+/* ARTIGO */
+div.artigo
+{
+    float: right;
+    line-height: 30px;
+    /*height: 200px;*/
+    width: 618px;
+    margin: 20px;
+    text-align: justify;
+}
+img.artigo
+{
+    width: 200px;
+    float: right;
+}
+img.imghome
+{
+    width: 800px;
+    margin-left: 50px;
+}
+
+hr.clear{ clear: both; }
+
+.h3_center{text-align: center; color: #fff; font-size: 24px; margin-bottom: 8px;}
+.a_artigos{color: blue; letter-spacing: 2px; font-weight: bold;}
+.a_artigos:hover{color: #E9322D;}
+
+.campofieldset {
+    width: 683px;
+    border: 1px solid #000000;
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px 20px;
+}
+
+#contato_index {
+    line-height: 30px;
+}
+
+img.artigo {
+    float: left;
+    margin: 20px;
+}
+
+ul#lista_home {list-style-type: circle;}
+
+input[type="text"].logar {
+    background: gainsboro;
+    border-style:solid;
+    border-width: 1px;
+    border-color: #fff;
+    border-radius: 5px;
+    width: available;
+}
+input[type="text"]:focus.logar {
+    background: gainsboro;
+    border-style:solid;
+    border-width: 1px;
+    border-color: red;
+    border-radius: 5px;
+}
+
+input[type="password"].logar {
+    background: gainsboro;
+    border-style:solid;
+    border-width: 1px;
+    border-color: #fff;
+    border-radius: 5px;
+    width: available;
+}
+input[type="password"]:focus.logar {
+    background: gainsboro;
+    border-style:solid;
+    border-width: 1px;
+    border-color: red;
+    border-radius: 5px;
+}
