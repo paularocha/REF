@@ -66,9 +66,9 @@
                 <nav class="site">
                     <h3 class="h3_center">Menu</h3>
                     <ul>
-                        <li><a href="index?log=AgendaView">Visualizar agenda</a></li>
-                        <li><a href="index?log=Espaco">Lista de Espaços Físicos</a></li>
-                        <li><a href="index?log=MinhasReservas">Minhas Reservas</a></li>
+                        <a href="index?log=AgendaView"><li>Visualizar agenda</li></a>
+                        <a href="index?log=Espaco"><li>Lista de Espaços Físicos</li></a>
+                        <a href="index?log=MinhasReservas"><li>Minhas Reservas</li></a>
                         
                     </ul>
                 </nav>

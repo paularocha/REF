@@ -37,12 +37,11 @@ section#barra-superior {
 
 
 section#barra-superior a { color: #FFF; }
-/*section#barra-superior div#titulo { float: top; margin-top: -5px; margin-right: 20px; height: 124px;}*/
 section#barra-superior div#menu-login { height: 25px; margin-top: 116px;}
-section#barra-superior nav { float: right; margin-right: 120px; }
+section#barra-superior nav { float: left; margin-right: 120px; }
 section#barra-superior nav a { font-size: larger; padding: 10px;}
 section#barra-superior nav a:hover { background: #4D79FF; }
-section#barra-superior div#usuario { float: left; padding-right: 20px; }
+section#barra-superior div#usuario { float: right; padding-right: 20px; }
 
 /*=== BARRA INFERIOR =========================================================*/
 section#barra-inferior {
@@ -85,21 +84,26 @@ h1.site a { color: #000; }
 aside { position: fixed; float: left; width:230px;}
 aside nav.site { 
     padding: 10px;
-    background-color: #3890b8;
     border-radius: 8px;
+    border: 2px solid #3890b8;
 }
 aside nav.site ul li {
-    text-align: left;
+    text-decoration: none; color: #fff; font-weight: bold;
+    border-radius: 6px;
+    border-style: solid;
+    border-spacing: 1px;
+    border-width: 1px;
+    border-color: #3890b8;
+    text-align: center;
     list-style-type: none;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    background-color: #3890b8;
+    height: 25px;
 }
-aside nav.site ul li a {
-/*    border-left: 1px dashed #fff;
-    border-right: 1px dashed #fff;*/
-    text-decoration: none; color: #fff; text-align: left; font-weight: bold;
-    padding: 0 16px;
+
+aside nav.site ul li:hover{
+    background-color: #3399FF;
 }
-aside nav.site ul li a:hover {color: mediumblue; }
 
 /*=== RODAPÉ DO CORPO ========================================================*/
 footer.site { font-size: small; padding: 10px; clear: both; }
