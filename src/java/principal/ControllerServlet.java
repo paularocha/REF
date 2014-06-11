@@ -1,13 +1,14 @@
 package principal;
 
+import controllers.Controller;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Method;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import controllers.Controller;
 
 /**
  * Servlet implementation class ControllerServlet
@@ -28,14 +29,18 @@ public class ControllerServlet extends HttpServlet {
             
             if(controller == null)
                 controller = "Home";
-            System.out.println("param: " + controller);
+            System.out.println("Controlador: " + controller);
             String nomeDaClasse = "controllers." + controller + "Controller";
-
+            //System.out.println("metodo = ");
             try {
                 Class<?> classe = Class.forName(nomeDaClasse);
-
+                
+                Method met = classe.getMethod(action, new Class[]{HttpServletRequest.class, HttpServletResponse.class});
+                System.out.println("metodo = " + met.getName());
+                
                 Controller logica = (Controller) classe.newInstance();
-                String pagina = logica.executa(request, response);
+                String pagina = (String)met.invoke(logica,new Object[]{request, response});
+                //String pagina = logica.executa(request, response);
 
                 request.getRequestDispatcher(pagina).forward(request, response);
 
