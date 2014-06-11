@@ -1,10 +1,10 @@
-package logicas;
+package controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class Home implements Logica {
+public class HomeController implements LogicaController {
 
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse res)

@@ -1,10 +1,10 @@
-package logicas;
+package controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class AgendaView implements Logica {
+public class AgendaController implements LogicaController {
 
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse res)

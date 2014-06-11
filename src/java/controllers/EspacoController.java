@@ -1,4 +1,4 @@
-package logicas;
+package controllers;
 
 import beans.EspacoBean;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import testemvc.Mocc;
 
 
-public class Espaco implements Logica {
+public class EspacoController implements LogicaController {
 
     @Override
     public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {

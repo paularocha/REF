@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import logicas.Logica;
+import controllers.LogicaController;
 
 /**
  * Servlet implementation class ControllerServlet
@@ -23,16 +23,18 @@ public class ControllerServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             PrintWriter out = response.getWriter();
 
-            String parametro = request.getParameter("log");
-            if(parametro == null)
-                parametro = "Home";
-            System.out.println("param: " + parametro);
-            String nomeDaClasse = "logicas." + parametro;
+            String action = request.getParameter("ac");
+            String controller = request.getParameter("log");
+            
+            if(controller == null)
+                controller = "Home";
+            System.out.println("param: " + controller);
+            String nomeDaClasse = "controllers." + controller + "Controller";
 
             try {
                 Class<?> classe = Class.forName(nomeDaClasse);
 
-                Logica logica = (Logica) classe.newInstance();
+                LogicaController logica = (LogicaController) classe.newInstance();
                 String pagina = logica.executa(request, response);
 
                 request.getRequestDispatcher(pagina).forward(request, response);
