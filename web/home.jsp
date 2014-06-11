@@ -8,6 +8,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Edivandro Aquino Damasceno" >
+        <script src="arquivos_web/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){ 
+                $(window).scroll(function(){
+                    $("aside#flutuante").animate({"top":$(this).scrollTop()},50);
+                });
+            });
+        </script>
         <link type="text/css" rel="stylesheet" href="arquivos_web/estilo.css" />
         <link type="text/css" rel="stylesheet" href="conteudos/estiloespace.css" />
         <link href="arquivos_web/imagens/favicon.ico" rel="shortcut icon">
@@ -62,7 +70,7 @@
 
             </header>
 
-            <aside>
+            <aside id="flutuante">
                 <nav class="site">
                     <h3 class="h3_center">Menu</h3>
                     <ul>
