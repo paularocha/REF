@@ -6,31 +6,35 @@ import java.util.ArrayList;
 
 public class EventoGoogleDAO {
     private String agendaId;
-    private ArrayList<EventoGoogleBean> eventList;
-    private ArrayList<Object> eventListDay;
+    private ArrayList<EventoGoogleBean> listaDeTodosEventos;
+    private ArrayList<Object> listaDeEventosDeUmDia;
 
+    public EventoGoogleDAO() {
+    
+    }    
+    
     public EventoGoogleDAO(String agendaId) {        
         this.agendaId = agendaId;
     }
-
     
     public ArrayList<EventoGoogleBean> listarTodosEventos(){    
-        eventList = new ArrayList<>();
-        return eventList;
+        listaDeTodosEventos = new ArrayList<>();
+        return listaDeTodosEventos;
     }
     public ArrayList<EventoGoogleBean> listarEventosDoDia(String dia){
-        eventListDay = new ArrayList<>();
-        return eventList;
+        listaDeEventosDeUmDia = new ArrayList<>();
+        return listaDeTodosEventos;
     }
     
     public void deletarEvento(String eventoId){}
     
-    public String criarEvento(String sumario, String motivo, String startDateTime, String endDateTime){
-        
+    public String criarEvento(EventoGoogleBean eventoGoogleBean){        
         return "idEventCreate";
     }
     
-    public void atualizarEvento(String eventoId){}
+    public String atualizarEvento(String eventoId){
+        return "idEventUpdate";
+    }
     
     
     
