@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import controllers.LogicaController;
+import controllers.Controller;
 
 /**
  * Servlet implementation class ControllerServlet
@@ -34,7 +34,7 @@ public class ControllerServlet extends HttpServlet {
             try {
                 Class<?> classe = Class.forName(nomeDaClasse);
 
-                LogicaController logica = (LogicaController) classe.newInstance();
+                Controller logica = (Controller) classe.newInstance();
                 String pagina = logica.executa(request, response);
 
                 request.getRequestDispatcher(pagina).forward(request, response);

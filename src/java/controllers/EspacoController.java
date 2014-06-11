@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import testemvc.Mocc;
 
 
-public class EspacoController implements LogicaController {
+public class EspacoController implements Controller {
 
     @Override
     public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {

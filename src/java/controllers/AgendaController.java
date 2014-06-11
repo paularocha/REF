@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class AgendaController implements LogicaController {
+public class AgendaController implements Controller {
 
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse res)
