@@ -29,9 +29,13 @@ public class ControllerServlet extends HttpServlet {
             
             if(controller == null)
                 controller = "Home";
+            if(action == null)
+                action = "executa";
+            
             System.out.println("Controlador: " + controller);
+            
             String nomeDaClasse = "controllers." + controller + "Controller";
-            //System.out.println("metodo = ");
+            
             try {
                 Class<?> classe = Class.forName(nomeDaClasse);
                 
