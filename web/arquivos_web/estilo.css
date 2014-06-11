@@ -81,7 +81,7 @@ h1.site { text-align: center; padding: 10px; }
 h1.site a { color: #000; }
 
 /*=== BARRA LATERAL ==========================================================*/
-aside { position: relative; float: left; width:230px; background-color: aqua; }
+aside { position: fixed; float: left; width:230px; background-color: aqua; }
 aside nav.site { 
     padding: 10px;
     border-radius: 8px;
