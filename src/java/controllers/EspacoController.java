@@ -23,7 +23,7 @@ public class EspacoController implements Controller {
         String nomeArq = "conteudos/espacos.jsp";
         req.setAttribute("nomearq", nomeArq);
         req.setAttribute("bd", bd);
-        return "home.jsp";
+        return "/WEB-INF/jsp/home.jsp";
     }
 
 }

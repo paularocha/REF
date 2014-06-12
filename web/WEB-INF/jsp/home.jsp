@@ -17,7 +17,7 @@
             });*/
         </script>
         <link type="text/css" rel="stylesheet" href="arquivos_web/estilo.css" />
-        <link type="text/css" rel="stylesheet" href="conteudos/estiloespace.css" />
+        <link type="text/css" rel="stylesheet" href="arquivos_web/estiloespace.css" />
         <link href="arquivos_web/imagens/favicon.ico" rel="shortcut icon">
     </head>
     <body>
