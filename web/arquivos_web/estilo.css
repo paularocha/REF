@@ -19,7 +19,7 @@ a { text-decoration: none; color: #000; outline: none; }
 section#barra-superior {
     top: 0;
     z-index: 999;
-    width: 1327px;
+    width: auto;
     height:140px;
     padding: 10px;
     color: #FFF;

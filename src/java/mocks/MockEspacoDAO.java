@@ -1,4 +1,4 @@
-package testemvc;
+package mocks;
 
 
 import model.beans.EspacoBean;

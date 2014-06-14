@@ -4,7 +4,7 @@ import model.beans.EspacoBean;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import testemvc.MockEspacoDAO;
+import mocks.MockEspacoDAO;
 
 
 public class EspacoController implements Controller {
