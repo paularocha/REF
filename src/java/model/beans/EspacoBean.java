@@ -19,30 +19,32 @@ public class EspacoBean {
         return nome;
     }
 
-    public EspacoBean setNome(String nome) {
-        this.nome = nome;
-        return this;
-    }
-
+    
     public String getInformacoes() {
         return informacoes;
         
+    }
+    public boolean isConfirmavel() {
+        return confirmavel;
+    }
+    
+    public EspacoBean setConfirmavel(boolean confirmavel) {
+        this.confirmavel = confirmavel;
+        return this;
     }
 
     public EspacoBean setInformacoes(String informacoes) {
         this.informacoes = informacoes;
         return this;
     }
-
-    public boolean isConfirmavel() {
-        return confirmavel;
-    }
-
-    public EspacoBean setConfirmavel(boolean confirmavel) {
-        this.confirmavel = confirmavel;
+    
+    public EspacoBean setNome(String nome) {
+        this.nome = nome;
         return this;
     }
+
+
     
-    
-    
+
+
 }
