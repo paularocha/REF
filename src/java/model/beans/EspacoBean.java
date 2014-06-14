@@ -1,6 +1,6 @@
 
 
-package beans;
+package model.beans;
 
 public class EspacoBean {
     private String nome;

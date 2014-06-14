@@ -1,6 +1,6 @@
-package dao;
+package model.dao;
 
-import beans.EventoGoogleBean;
+import model.beans.EventoGoogleBean;
 import java.util.ArrayList;
 
 

@@ -1,10 +1,10 @@
 package controllers;
 
-import beans.EspacoBean;
+import model.beans.EspacoBean;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import testemvc.Mocc;
+import testemvc.MockEspacoDAO;
 
 
 public class EspacoController implements Controller {
@@ -15,7 +15,7 @@ public class EspacoController implements Controller {
         String id = req.getParameter("id");
 
        
-        Mocc mock = new Mocc();
+        MockEspacoDAO mock = new MockEspacoDAO();
         ArrayList<EspacoBean> bd = mock.getBd();
         // Guarda a lista no request
         // req.setAttribute("contatos", contatos);
@@ -23,7 +23,7 @@ public class EspacoController implements Controller {
         String nomeArq = "conteudos/espacos.jsp";
         req.setAttribute("nomearq", nomeArq);
         req.setAttribute("bd", bd);
-        return "/WEB-INF/jsp/home.jsp";
+        return "/WEB-INF/views/home.jsp";
     }
 
 }

@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <h2 id="cabecalho">  <a href="javascript:;">Lista de Espaços Físicos</a> &blacktriangleleft; <a href="index?log=Espaco$id=xxx">xxx</a></h2>
-    <jsp:useBean id="dao" class="testemvc.Mocc" />
+    <jsp:useBean id="dao" class="testemvc.MockEspacoDAO" />
 
         <% 
 

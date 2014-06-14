@@ -14,7 +14,7 @@ public class HomeController implements Controller {
                 
                 String nomeArq = "conteudos/saudacao.jsp";
                 req.setAttribute("nomearq", nomeArq);
-            return "/WEB-INF/jsp/home.jsp";
+            return "/WEB-INF/views/home.jsp";
 	}
 
 }

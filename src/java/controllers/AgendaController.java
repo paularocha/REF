@@ -14,7 +14,7 @@ public class AgendaController implements Controller {
                 
                 String nomeArq = "conteudos/agendaview.jsp";
                 req.setAttribute("nomearq", nomeArq);
-            return "/WEB-INF/jsp/home.jsp";
+            return "/WEB-INF/views/home.jsp";
 	}
 
 }

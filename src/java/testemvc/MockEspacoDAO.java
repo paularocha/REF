@@ -1,11 +1,11 @@
 package testemvc;
 
 
-import beans.EspacoBean;
+import model.beans.EspacoBean;
 import java.util.ArrayList;
 
 
-public class Mocc {
+public class MockEspacoDAO {
 	
         ArrayList<EspacoBean> espacos;
         EspacoBean esp1;
@@ -14,7 +14,7 @@ public class Mocc {
         EspacoBean esp4;
         EspacoBean esp5;
 	
-	public Mocc(){
+	public MockEspacoDAO(){
             espacos = new ArrayList<EspacoBean>();
             esp1 = new EspacoBean("Lab-40", "tem 40 pc's", true);
             esp2 = new EspacoBean("Lab-30", "tem 30 pc's", true);
