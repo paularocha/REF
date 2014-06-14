@@ -21,14 +21,17 @@ public class EspacoBean {
 
     public void setNome(String nome) {
         this.nome = nome;
+        return this;
     }
 
     public String getInformacoes() {
         return informacoes;
+        
     }
 
     public void setInformacoes(String informacoes) {
         this.informacoes = informacoes;
+        return this;
     }
 
     public boolean isConfirmavel() {
@@ -37,6 +40,7 @@ public class EspacoBean {
 
     public void setConfirmavel(boolean confirmavel) {
         this.confirmavel = confirmavel;
+        return this;
     }
     
     
