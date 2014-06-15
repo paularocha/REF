@@ -1,17 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package model.beans;
 
-/**
- *
- * @author Anderson
- */
 public class EventoGoogleBean {
-    
+    private String eventoGoogleId;    
+    private String motivo;
+    private String espaco;
+    private String agendaGoogleId;
+    private String descricao;
+    private String dataHoraInicial;
+    private String dataHoraFinal;
+    private String nomeDoCriador;
+    private String dataDeAtualizacao;
+    private String dataDeCriacao;
     
     
     
