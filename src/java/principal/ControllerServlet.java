@@ -1,6 +1,6 @@
 package principal;
 
-import controllers.Controller;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
@@ -42,7 +42,7 @@ public class ControllerServlet extends HttpServlet {
                 Method met = classe.getMethod(action, new Class[]{HttpServletRequest.class, HttpServletResponse.class});
                 System.out.println("metodo = " + met.getName());
                 
-                Controller logica = (Controller) classe.newInstance();
+                Object logica =  classe.newInstance();
                 String pagina = (String)met.invoke(logica,new Object[]{request, response});
                 //String pagina = logica.executa(request, response);
 

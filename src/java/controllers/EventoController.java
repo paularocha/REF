@@ -7,22 +7,23 @@ import javax.servlet.http.HttpServletResponse;
 import mocks.MockEspacoDAO;
 
 
-public class EspacoController{
+public class EventoController// implements Controller 
+{
 
-
+//    @Override
     public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
         System.out.println("Executando a logica e redirecionando...");
-        String id = req.getParameter("id");
+        String espaco = req.getParameter("espaco");
 
        
-        MockEspacoDAO mock = new MockEspacoDAO();
-        ArrayList<EspacoBean> bd = mock.getBd();
+        //MockEspacoDAO mock = new MockEspacoDAO();
+        //ArrayList<EspacoBean> bd = mock.getBd();
         // Guarda a lista no request
         // req.setAttribute("contatos", contatos);
         
-        String nomeArq = "conteudos/espacosView.jsp";
+        String nomeArq = "conteudos/eventoView.jsp";
         req.setAttribute("nomearq", nomeArq);
-        req.setAttribute("bd", bd);
+        req.setAttribute("espaco", espaco);
         return "/WEB-INF/views/homeView.jsp";
     }
 

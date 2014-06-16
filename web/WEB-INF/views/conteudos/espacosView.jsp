@@ -15,7 +15,7 @@
 
         <c:forEach var="espaco" items="${dao.bd}">
             <div id="pastilha">
-                <a href="index?log=Espaco&id=esp1">
+                <a href="index?log=Evento&espaco=${espaco.nome}&data=hoje">
                     <b>${espaco.nome}</b><br>
                     <span>${espaco.informacoes}</span>
                 </a>
