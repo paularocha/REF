@@ -1,4 +1,6 @@
+<div id="conteudo">
 <h2 id="cabecalho">Agenda</h2>
+
 <div id="agendaview">
     
        <iframe
@@ -9,5 +11,5 @@
            frameborder="0"
            scrolling="no">
        </iframe>
-       
+</div>       
 </div>

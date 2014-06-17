@@ -16,6 +16,29 @@
                 });
             });*/
         </script>
+        
+         <meta charset="utf-8">
+        <title>jQuery UI Dialog - Default functionality</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script>
+            function dialogar(){
+                $(function() {
+                $( "#dialog" ).dialog({
+                    modal: true,
+                    buttons: {
+                    Ok: function() {
+                    $( this ).dialog( "close" );
+                    }
+                    }
+                    
+                });
+                });
+            }
+            //dialogar();
+        </script>
         <link type="text/css" rel="stylesheet" href="arquivos_web/estilo.css" />
         <link type="text/css" rel="stylesheet" href="arquivos_web/estiloespace.css" />
         <link href="arquivos_web/imagens/favicon.ico" rel="shortcut icon">
@@ -30,35 +53,27 @@
                     <a href="index?log=quemsomos">Quem somos</a>
                 </nav>
                 <div id="usuario">
-                    <%
-                        if(false){
-                            out.println("<b>Saudações,<a href=\"index?log=Logout\"> sair</a></b>");
-                        }else{
-                    %>
-                    <!--
-                    <?php
-                    
-                        if ( logado() ) 
-                        {
-                            echo "VocÃª entrou como <b>" . $_SESSION["usuario"]["nome"] . 
-                                 '</b> | <a href="index.php?pagina=logout">Sair</a>';
-                        }
-                        else
-                        {
-                    ?>
-                    -->
-                    <form id="form_login" method="post" action="index?log=logar">
-                        <div class="row-fluid">
-                            <label for="login">Login: </label>
-                            <input type="text" maxlength="200" size="15" id="login" class="logar" name="login" />
-                            <label for="senha">Senha: </label>
-                            <input type="password" maxlength="140" size="10" id="senha" class="logar" name="senha" />
-                        <!--<input type="hidden" name="enviado" value="sim" />-->
-                        <button id="botao" type="submit">Entrar</button>
-                        </div>
-                    </form>
-                    <% } %>
-                    <!--<?php } ?> -->
+                    <c:choose>
+                        <c:when test="${usuarioLogado != null}" >
+                            <b>Saudações, ${usuarioLogado.nome}<a href="sessao?ac=logout"> sair</a></b>
+                        </c:when>    
+
+                        <c:otherwise>
+                        <form id="form_login" method="post" action="sessao?ac=logar">
+                            <div class="row-fluid">
+                                <label for="login">Login: </label>
+                                <input type="text" maxlength="200" size="15" id="login" class="logar" name="login" />
+                                <label for="senha">Senha: </label>
+                                <input type="password" maxlength="140" size="10" id="senha" class="logar" name="senha" />
+                            <!--<input type="hidden" name="enviado" value="sim" />-->
+                            <button id="botao" type="submit">Entrar</button>
+                            </div>
+                        </form>
+                        </c:otherwise>
+                    </c:choose>                 
+                    <c:if test="${errado eq 'true'}">
+                        <script>dialogar();</script>
+                    </c:if>
                 </div>
             </div>
                 
@@ -70,37 +85,74 @@
 
             </header>
 
-            <aside id="flutuante">
-                <nav class="site">
-                    <h3 class="h3_center">Menu</h3>
-                    <ul>
-                        <a href="index?log=Agenda&ac=executa"><li>Visualizar agenda</li></a>
-                        <a href="index?log=Espaco&ac=executa"><li>Lista de Espaços Físicos</li></a>
-                        <a href="index?log=MinhasReservas&ac=executa"><li>Minhas Reservas</li></a>
+            
+                <c:choose>
+                    <c:when test="${usuarioLogado.cargo eq 'aluno'}">
+                        <aside id="flutuante">
+                        <nav class="site">
+                            <h3 class="h3_center">Menu</h3>
+                            <ul>
+                                <a href="index?log=Agenda&ac=executa"><li>Visualizar agenda</li></a>
+                                <a href="index?log=Espaco&ac=executa"><li>Lista de Espaços Físicos</li></a>
+                                <a href="index?log=MinhasReservas&ac=executa"><li>Minhas Reservas</li></a>
+                                <a href="index?log=Home&ac=testar"><li>testar outras acoes</li></a>
+
+                            </ul>
+                        </nav>
+                        </aside>
+                    </c:when>
+                    
+                    <c:when test="${usuarioLogado.cargo eq 'usuarioadm'}">
+                        <aside id="flutuante">
+                        <nav class="site">
+                            <h3 class="h3_center">Menu</h3>
+                            <ul>
+                                <a href="index?log=Agenda&ac=executa"><li>Visualizar agenda</li></a>
+                                <a href="index?log=Espaco&ac=executa"><li>Lista de Espaços Físicos</li></a>
+                                <a href="index?log=MinhasReservas&ac=executa"><li>Minhas Reservas</li></a>
+                                <a href="index?log=MinhasReservas&ac=executa"><li>Reservas para confirmar</li></a>
+                                <a href="index?log=Home&ac=testar"><li>testar outras acoes</li></a>
+
+                            </ul>
+                        </nav>
+                        </aside>
+                    </c:when>
+                    <c:when test="${usuarioLogado.cargo eq 'adm'}">
+                        <aside id="flutuante">
+                        <nav class="site">
+                            <h3 class="h3_center">Menu</h3>
+                            <ul>
+                                <a href="index?log=Agenda"><li>Visualizar agenda</li></a>
+                                <a href="index?log=Agenda"><li>Cadastros para confirmar</li></a>
+                                <a href="index?log=Espaco"><li>Lista de Espaços Físicos</li></a>
+                                <a href="index?log=MinhasReservas&ac=executa"><li>Reservas para confirmar</li></a>
+                                <a href="index?log=Home&ac=testar"><li>testar outras acoes</li></a>
+
+                            </ul>
+                        </nav>
+                        </aside>
+                    </c:when>
+                    <c:otherwise>
                         
-                    </ul>
-                </nav>
+                    </c:otherwise>
+                
+                </c:choose>
+                
             </aside>
             
             <section class="pagina">
                 
                 <jsp:include page="${nomearq}" flush="true"/>
-                <!--
-                <?php
-                    $pagina = ( isset($_GET["pagina"]) ? $_GET["pagina"] : "home");
-                    $pagina = "paginas/" . $pagina . ".php";
-                    
-                    if ( !empty($pagina) )
-                    {
-                        if ( file_exists($pagina) ) { include $pagina; }
-                        else { print "Esta pÃ¡gina nao existe!"; }
-                    }
-                ?> -->
+                
             </section>
 
             <footer class="site">
             </footer>
         </section>
-        <section id="barra-inferior"><a href="index.php">Copyright &copy; 2013</a></section>
+        <section id="barra-inferior"><a href="index.php">Copyright &copy; 2014</a></section>
+        
+        <div id="dialog" title="Erro" style="display: none;">
+            <p>Você não está autorizado.</p>
+        </div>
     </body>
 </html>
