@@ -40,7 +40,8 @@
             //dialogar();
         </script>
         <link type="text/css" rel="stylesheet" href="arquivos_web/estilo.css" />
-        <link type="text/css" rel="stylesheet" href="arquivos_web/estiloespace.css" />
+        <link type="text/css" rel="stylesheet" href="arquivos_web/estiloespacoview.css" />
+        <link type="text/css" rel="stylesheet" href="arquivos_web/estiloagendaview.css" />
         <link href="arquivos_web/imagens/favicon.ico" rel="shortcut icon">
     </head>
     <body>
@@ -55,11 +56,11 @@
                 <div id="usuario">
                     <c:choose>
                         <c:when test="${usuarioLogado != null}" >
-                            <b>Saudações, ${usuarioLogado.nome}<a href="sessao?ac=logout"> sair</a></b>
+                            <b>Saudações, ${usuarioLogado.nome}<a href="index?log=Sessao&ac=efetuarLogout"> sair</a></b>
                         </c:when>    
 
                         <c:otherwise>
-                        <form id="form_login" method="post" action="sessao?ac=logar">
+                        <form id="form_login" method="post" action="index?log=Sessao&ac=efetuarLogin">
                             <div class="row-fluid">
                                 <label for="login">Login: </label>
                                 <input type="text" maxlength="200" size="15" id="login" class="logar" name="login" />

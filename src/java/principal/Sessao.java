@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package principal;
 
 import java.io.IOException;
@@ -17,10 +11,6 @@ import mocks.MockUsuarioDAO;
 import model.beans.UsuarioBean;
 import model.dao.UsuarioDAO;
 
-/**
- *
- * @author Anderson
- */
 public class Sessao extends HttpServlet {
 
     /**
@@ -49,7 +39,7 @@ public class Sessao extends HttpServlet {
                     
                     sessao.setAttribute("usuarioLogado", usuario);
 
-                    
+                    //response.sendRedirect("");  
                 //    request.getRequestDispatcher("/WEB-INF/views/homeView.jsp").forward(request, response);
                 }else{
                     request.setAttribute("errado","true");
@@ -63,7 +53,7 @@ public class Sessao extends HttpServlet {
             //response.sendRedirect("");
 
             request.getRequestDispatcher("/WEB-INF/views/homeView.jsp").forward(request, response);
-            response.sendRedirect("");  
+            //response.sendRedirect("");  
         }
     }
 

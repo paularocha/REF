@@ -218,3 +218,23 @@ input[type="password"]:focus.logar {
     border-color: red;
     border-radius: 5px;
 }
+ 
+/*   estilos de conteudos gerais    */
+h2#cabecalho{
+    margin-left: 30px;
+    border:1px solid goldenrod;
+    background-color: buttonface;
+    padding-left: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #989898;
+    width: 807px;
+    margin-bottom: 30px;
+    
+}
+
+
+
+h2#cabecalho a:hover{
+    color: green; 
+    
+}

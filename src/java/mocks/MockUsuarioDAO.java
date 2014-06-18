@@ -14,6 +14,7 @@ public class MockUsuarioDAO {
     UsuarioBean user3;
     UsuarioBean user4;
     UsuarioBean user5;
+    UsuarioBean user6;
 
     public MockUsuarioDAO(){
         usuarios = new ArrayList<>();
@@ -22,12 +23,14 @@ public class MockUsuarioDAO {
         user3 = new UsuarioBean("andrey", "andreyramos", "12345", "andrey@gmail","adm");
         user4 = new UsuarioBean("andressa", "andressaramos", "123456", "andressa@gmail","aluno");
         user5 = new UsuarioBean("anderson", "andresramos", "1234567", "anderson@gmail","adm");
+        user6 = new UsuarioBean("administrador", "admin", "admin", "adm@gmail","adm");
 
         usuarios.add(user1);
         usuarios.add(user2);
         usuarios.add(user3);
         usuarios.add(user4);
         usuarios.add(user5);		
+        usuarios.add(user6);		
     }
 
     public ArrayList<UsuarioBean> getBd(){		

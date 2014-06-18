@@ -16,15 +16,33 @@ public class EventoController// implements Controller
         String espaco = req.getParameter("espaco");
 
        
-        //MockEspacoDAO mock = new MockEspacoDAO();
-        //ArrayList<EspacoBean> bd = mock.getBd();
-        // Guarda a lista no request
-        // req.setAttribute("contatos", contatos);
+        if(SessaoController.isLoged(req, res)){
+            String nomeArq = "conteudos/eventoView.jsp";
+            req.setAttribute("nomearq", nomeArq);
+            req.setAttribute("espaco", espaco);
+            return "/WEB-INF/views/homeView.jsp";
+        }else{
+           String nomeArq = "conteudos/saudacaoView.jsp";
+            req.setAttribute("nomearq", nomeArq);
+            req.setAttribute("errado","true" );
+            return "/WEB-INF/views/homeView.jsp";
+       }
         
-        String nomeArq = "conteudos/eventoView.jsp";
-        req.setAttribute("nomearq", nomeArq);
-        req.setAttribute("espaco", espaco);
-        return "/WEB-INF/views/homeView.jsp";
+    }
+    
+    public String verEventosPendentes(HttpServletRequest req, HttpServletResponse res) throws Exception {
+        System.out.println("Executando a logica e redirecionando...");
+        if(SessaoController.isLoged(req, res)){
+            String nomeArq = "conteudos/eventosPendentesView.jsp";
+            req.setAttribute("nomearq", nomeArq);
+
+            return "/WEB-INF/views/homeView.jsp";
+        }else{
+            String nomeArq = "conteudos/saudacaoView.jsp";
+            req.setAttribute("nomearq", nomeArq);
+            req.setAttribute("errado","true" );
+            return "/WEB-INF/views/homeView.jsp";
+       }
     }
 
 }
