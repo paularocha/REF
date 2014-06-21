@@ -228,13 +228,63 @@ h2#cabecalho{
     border-radius: 10px;
     box-shadow: 3px 3px 3px #989898;
     width: 807px;
-    margin-bottom: 30px;
-    
+    margin-bottom: 30px;  
 }
 
-
-
 h2#cabecalho a:hover{
-    color: green; 
-    
+    color: green;     
+}
+
+/* PÁGINA MINHAS RESERVAS */
+
+form#formMinhasReservas {
+    padding-left: 50px;
+}
+
+input#cabecalhoReservas {
+    color: #4D79FF;
+    margin-left: -4px;
+    border: none;
+    text-align: center;
+    background-color: #FFFFFF;
+    width: 150px;
+    padding-left: 10px;
+}
+
+input#campoEspaco {
+    color: #000;
+    padding-left: 10px;
+    border: 1px solid;
+    border-color: #989898;
+    border-right-style: none;
+    width: 150px;
+}
+
+input#campoData {
+    color: #000;
+    margin-left: -4px;
+    padding-left: 10px;
+    border: 1px solid;
+    border-color: #989898;
+    border-right-style: none;
+    width: 150px;
+}
+
+input#campoHoraInicio {
+    color: #000;
+    margin-left: -4px;
+    padding-left: 10px;
+    border: 1px solid;
+    border-color: #989898;
+    border-right-style: none;
+    width: 150px;
+}
+
+input#campoHoraFim {
+    color: #000;
+    margin-left: -4px;
+    padding-left: 10px;
+    border: 1px solid;
+    border-color: #989898;
+    width: 150px;
 }
