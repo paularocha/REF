@@ -68,7 +68,7 @@ public class EventoGoogleDAO {
         listaDeTodosEventosDoUsuario = new ArrayList<>();
        // EventoGoogleBean evGoogleBean;
         //Events ev = service.events().list("primary").setQ("displayName='" + nome + "'").execute();
-        Events ev = service.events().list("primary").execute();
+        Events ev = service.events().list("reservingspace@gmail.com").execute();
 
         while (true) {
             for (Event evento : ev.getItems()) {
@@ -89,7 +89,7 @@ public class EventoGoogleDAO {
             }
             String pageToken = ev.getNextPageToken();
             if (pageToken != null && !pageToken.isEmpty()) {
-                ev = service.events().list("primary").setPageToken(pageToken).execute();
+                ev = service.events().list("reservingspace@gmail.com").setPageToken(pageToken).execute();
             } else {
                 break;
             }
@@ -101,7 +101,7 @@ public class EventoGoogleDAO {
         listaDeTodosEventos = new ArrayList<>();
        // EventoGoogleBean evGoogleBean;
         
-        Events ev = service.events().list("primary").execute();
+        Events ev = service.events().list("reservingspace@gmail.com").execute();
 
         while (true) {
             for (Event evento : ev.getItems()) {
@@ -122,7 +122,7 @@ public class EventoGoogleDAO {
             }
             String pageToken = ev.getNextPageToken();
             if (pageToken != null && !pageToken.isEmpty()) {
-                ev = service.events().list("primary").setPageToken(pageToken).execute();
+                ev = service.events().list("reservingspace@gmail.com").setPageToken(pageToken).execute();
             } else {
                 break;
             }
