@@ -31,5 +31,4 @@ public class EspacoController{
             return "/WEB-INF/views/homeView.jsp";
        }
     }
-
 }

@@ -9,11 +9,8 @@
     <h2 id="cabecalho">Minhas Reservas</h2>
     
     <form id="formMinhasReservas" action="xxxxxxxxxx">
-        <input type="checkbox" name="idReserva">
-        <input id="cabecalhoReservas" type="text" name="espaco" value="Nome do Espaço" disabled>
-        <input id="cabecalhoReservas" type="text" name="data" value="Data do Evento" disabled>
-        <input id="cabecalhoReservas" type="text" name="horaInicio" value="Início" disabled>
-        <input id="cabecalhoReservas" type="text" name="horaFim"  value="Fim" disabled>
+        <p id="nomeEspaco">Nome do Espaço</p> <p id="dataEvento">Data do Evento</p>
+        <p id="inicioEvento">Início</p> <p id="fimEvento">Fim</p>
         <br>
         
         <input type="checkbox" name="idReserva">

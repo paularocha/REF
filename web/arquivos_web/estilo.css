@@ -236,20 +236,40 @@ h2#cabecalho a:hover{
 }
 
 /* PÁGINA MINHAS RESERVAS */
-
 form#formMinhasReservas {
     padding-left: 50px;
 }
 
-input#cabecalhoReservas {
-    color: #4D79FF;
-    margin-left: -4px;
-    border: none;
-    text-align: center;
-    background-color: #FFFFFF;
-    width: 150px;
-    padding-left: 10px;
+/* Formatação dos cabeçalhos da Lista de Reservas */
+
+#nomeEspaco{
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 44px;
 }
+
+#dataEvento {
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 102px;
+}
+
+#inicioEvento {
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 195px;
+}
+
+#fimEvento {
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 320px;
+}
+/* FIM da formatação dos cabeçalhos da Lista de Reservas*/
 
 input#campoEspaco {
     color: #000;
