@@ -1,10 +1,12 @@
 package controllers;
 
-import model.beans.EspacoBean;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mocks.MockEspacoDAO;
+import model.beans.EspacoBean;
+import model.beans.EventoGoogleBean;
+import model.dao.EventoGoogleDAO;
 
 
 public class EventoController// implements Controller 
@@ -14,10 +16,15 @@ public class EventoController// implements Controller
     public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
         System.out.println("Executando a logica e redirecionando...");
         String espaco = req.getParameter("espaco");
+        String criador = req.getParameter("criador");
 
        
         if(SessaoController.isLoged(req, res)){
+            EventoGoogleDAO eventoGoogleDAO = new EventoGoogleDAO();
+            
+            ArrayList<EventoGoogleBean> ev = eventoGoogleDAO.getListaDeTodosEventosDoUsuario(criador);
             String nomeArq = "conteudos/eventoView.jsp";
+            req.setAttribute("eventoGoogleDAO", ev);
             req.setAttribute("nomearq", nomeArq);
             req.setAttribute("espaco", espaco);
             return "/WEB-INF/views/homeView.jsp";

@@ -39,7 +39,7 @@ public class MockEspacoDAO {
         espacos.add(new EspacoBean("Auditorio", "para grandes eventos ", true));		
     }
 
-    public ArrayList<EspacoBean> getBd(){		
+    public ArrayList<EspacoBean> getEspacos(){		
             return espacos;		
     }
 }

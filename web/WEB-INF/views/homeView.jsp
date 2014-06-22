@@ -39,9 +39,8 @@
             }
             //dialogar();
         </script>
-        <link type="text/css" rel="stylesheet" href="arquivos_web/estilo.css" />
-        <link type="text/css" rel="stylesheet" href="arquivos_web/estiloespacoview.css" />
-        <link type="text/css" rel="stylesheet" href="arquivos_web/estiloagendaview.css" />
+        <link type="text/css" rel="stylesheet" href="arquivos_web/estilo.css" />        
+        <link type="text/css" rel="stylesheet" href="arquivos_web/estilodosconteudos.css" />
         <link href="arquivos_web/imagens/favicon.ico" rel="shortcut icon">
     </head>
     <body>
@@ -95,7 +94,7 @@
                             <ul>
                                 <a href="index?log=Agenda&ac=executa"><li>Visualizar agenda</li></a>
                                 <a href="index?log=Espaco&ac=executa"><li>Lista de Espaços Físicos</li></a>
-                                <a href="index?log=MinhasReservas&ac=executa"><li>Minhas Reservas</li></a>
+                                <a href="index?log=Evento&ac=executa&criador=Andre ramos"><li>Minhas Reservas</li></a>
                                 <a href="index?log=Home&ac=testar"><li>testar outras acoes</li></a>
 
                             </ul>

@@ -15,14 +15,14 @@ public class EspacoController{
         String id = req.getParameter("id");
 
        if(SessaoController.isLoged(req, res)){
-            MockEspacoDAO mock = new MockEspacoDAO();
-            ArrayList<EspacoBean> bd = mock.getBd();
+            MockEspacoDAO mockEspacoDAO = new MockEspacoDAO();
+            //ArrayList<EspacoBean> mockEspacoDAO = mock.getBd();
             // Guarda a lista no request
             // req.setAttribute("contatos", contatos);
 
             String nomeArq = "conteudos/espacosView.jsp";
             req.setAttribute("nomearq", nomeArq);
-            req.setAttribute("bd", bd);
+            req.setAttribute("mockEspacoDAO", mockEspacoDAO);
             return "/WEB-INF/views/homeView.jsp";
        }else{
            String nomeArq = "conteudos/saudacaoView.jsp";
