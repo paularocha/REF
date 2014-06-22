@@ -6,14 +6,19 @@ public class EventoGoogleBean {
     private String espaco;
     private String agendaGoogleId;
     private String descricao;
+    private String data;
+    private String horaInicial;
+    private String horaFinal;
+    
     private String dataHoraInicial;
     private String dataHoraFinal;
     private String nomeDoCriador;
     private String dataDeAtualizacao;
     private String dataDeCriacao;
+    String dataHora[];
 
     public EventoGoogleBean() {
-        
+         this.dataHora = new String[2];
     }
 
     
@@ -36,6 +41,7 @@ public class EventoGoogleBean {
          return this;
     }
 
+    
     public String getEspaco() {
         return espaco;
     }
@@ -53,6 +59,12 @@ public class EventoGoogleBean {
         this.agendaGoogleId = agendaGoogleId;
          return this;
     }
+    public String getData() {
+        this.data = this.dataHoraInicial.split("T")[0];
+        return this.data;
+    }
+
+    
 
     public String getDescricao() {
         return descricao;
@@ -107,7 +119,18 @@ public class EventoGoogleBean {
         this.dataDeCriacao = dataDeCriacao;
          return this;
     }
-    
+
+    public String getHoraInicial() {
+        this.horaInicial = this.dataHoraInicial.split("T")[1].substring(0, 5);
+        return this.horaInicial;
+    }
+
+    public String getHoraFinal() {
+         this.horaFinal = this.dataHoraFinal.split("T")[1].substring(0, 5);
+        return this.horaFinal;
+    }
+
+   
     
     
     

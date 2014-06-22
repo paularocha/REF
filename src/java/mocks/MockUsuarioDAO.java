@@ -19,7 +19,7 @@ public class MockUsuarioDAO {
     public MockUsuarioDAO(){
         usuarios = new ArrayList<>();
         user1 = new UsuarioBean("andre", "andreramos", "123", "andre@gmail","adm");
-        user2 = new UsuarioBean("andrews", "andrewsramos", "1234", "andrews@gmail","aluno");
+        user2 = new UsuarioBean("Andre ramos", "andrewsramos", "1234", "andrews@gmail","aluno");
         user3 = new UsuarioBean("andrey", "andreyramos", "12345", "andrey@gmail","adm");
         user4 = new UsuarioBean("andressa", "andressaramos", "123456", "andressa@gmail","aluno");
         user5 = new UsuarioBean("anderson", "andresramos", "1234567", "anderson@gmail","adm");

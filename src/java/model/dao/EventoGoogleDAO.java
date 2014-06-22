@@ -45,7 +45,7 @@ public class EventoGoogleDAO {
                 new File(file.getAbsolutePath() + 
                         File.separator + 
                         "key.p12"))
-            .setServiceAccountUser("reservingspace@gmail.com")
+            .setServiceAccountUser("andre.rammos7@gmail.com")
             .build();
             //credential.refreshToken();
 
@@ -80,13 +80,12 @@ public class EventoGoogleDAO {
                         .setDataHoraFinal(evento.getEnd().getDateTime().toStringRfc3339())
                         .setNomeDoCriador(evento.getCreator().getDisplayName())
                         .setDescricao(evento.getDescription())
+                        //.setData(evento.getStart().getDate().toStringRfc3339())
                         .setEventoGoogleId(evento.getId());
                 if(evento.getCreator().getDisplayName().equals(nome))
                 listaDeTodosEventosDoUsuario.add(evGoogleBean);
                 
-                System.out.println("<b> Criador:</b> " + evento.getCreator().getDisplayName() + 
-                    " <b>Sumario:</b> " + evento.getSummary() + 
-                    " <b>dateTime:</b> " +  evento.getEnd().getDateTime().toStringRfc3339() + "<br>");
+                //System.out.println("<b> Criador:</b> " + evento.getCreator().getDisplayName() + " <b>Sumario:</b> " + evento.getSummary() + " <b>data:</b> " +  evento.getEnd().getDate().toStringRfc3339() + "<br>");
             }
             String pageToken = ev.getNextPageToken();
             if (pageToken != null && !pageToken.isEmpty()) {

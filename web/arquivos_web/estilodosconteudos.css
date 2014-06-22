@@ -89,3 +89,81 @@
      
     
 }
+
+
+/*  ==============  ESTILO DOS CONTEUDOS RELACIONADOS A MINHAS RESERVAS ===============   */
+
+#conteudoMinhasReservas {}
+
+#conteudoMinhasReservas form#formMinhasReservas {
+    padding-left: 50px;
+}
+
+/* Formatação dos cabeçalhos da Lista de Reservas */
+
+#conteudoMinhasReservas #nomeEspaco{
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 44px;
+}
+
+#conteudoMinhasReservas #dataEvento {
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 102px;
+}
+
+#conteudoMinhasReservas #inicioEvento {
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 195px;
+}
+
+#conteudoMinhasReservas #fimEvento {
+    float: left;
+    position: relative;
+    top: 10px;
+    left: 320px;
+}
+/* FIM da formatação dos cabeçalhos da Lista de Reservas*/
+
+#conteudoMinhasReservas input#campoEspaco {
+    color: #000;
+    padding-left: 10px;
+    border: 1px solid;
+    border-color: #989898;
+    border-right-style: none;
+    width: 150px;
+}
+
+#conteudoMinhasReservas input#campoData {
+    color: #000;
+    margin-left: -4px;
+    padding-left: 10px;
+    border: 1px solid;
+    border-color: #989898;
+    border-right-style: none;
+    width: 150px;
+}
+
+#conteudoMinhasReservas input#campoHoraInicio {
+    color: #000;
+    margin-left: -4px;
+    padding-left: 10px;
+    border: 1px solid;
+    border-color: #989898;
+    border-right-style: none;
+    width: 150px;
+}
+
+#conteudoMinhasReservas input#campoHoraFim {
+    color: #000;
+    margin-left: -4px;
+    padding-left: 10px;
+    border: 1px solid;
+    border-color: #989898;
+    width: 150px;
+}
