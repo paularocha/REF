@@ -95,8 +95,7 @@
                                 <a href="index?log=Agenda&ac=executa"><li>Visualizar agenda</li></a>
                                 <a href="index?log=Espaco&ac=executa"><li>Lista de Espaços Físicos</li></a>
                                 <a href="index?log=Evento&ac=verMeusEventos"><li>Minhas Reservas</li></a>
-                                <a href="index?log=Home&ac=testar"><li>testar outras acoes</li></a>
-                                <a href="index?log=MinhasReservas&ac=executa"><li>Minhas Reservas</li></a>
+                                <a href="index?log=Home&ac=testar"><li>testar outras acoes</li></a>                               
                             </ul>
                         </nav>
                         </aside>
