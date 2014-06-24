@@ -49,4 +49,10 @@ public class SessaoController {
         UsuarioBean usuarioLogado = (UsuarioBean) sessao.getAttribute("usuarioLogado");
         return (usuarioLogado != null);
     }
+    
+    public static UsuarioBean getUserLoged(HttpServletRequest request, HttpServletResponse response){
+        HttpSession sessao = request.getSession();
+        UsuarioBean usuarioLogado = (UsuarioBean) sessao.getAttribute("usuarioLogado");
+        return usuarioLogado;
+    }
 }

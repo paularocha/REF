@@ -22,7 +22,59 @@
         <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-        <link rel="stylesheet" href="/resources/demos/style.css">
+        <link rel="stylesheet" href="//jqueryui.com/resources/demos/style.css">
+        
+        <script src="//jqueryui.com/resources/demos/external/jquery.mousewheel.js"></script>
+        <script src="//jqueryui.com/resources/demos/external/globalize.js"></script>
+        <script src="//jqueryui.com/resources/demos/external/globalize.culture.de-DE.js"></script>
+             <script>
+                $.widget( "ui.timespinner", $.ui.spinner, {
+                options: {
+                // seconds
+                step: 60 * 1000,
+                // hours
+                page: 60
+                },
+                _parse: function( value ) {
+                if ( typeof value === "string" ) {
+                // already a timestamp
+                if ( Number( value ) === value ) {
+                return Number( value );
+                }
+                return +Globalize.parseDate( value );
+                }
+                return value;
+                },
+                _format: function( value ) {
+                return Globalize.format( new Date(value), "t" );
+                }
+                });
+                $(function() {
+                    $( "#hrinicio, #hrtermino" ).timespinner();
+                    var current = $( "#hrinicio, #hrtermino" ).timespinner( "value" );
+                    Globalize.culture( "de-DE" );
+                    $( "#hrinicio, #hrtermino" ).timespinner( "value", current );
+                });
+            </script>
+
+        
+        <script>
+            $(function() {
+                    $( "#datepicker" ).datepicker({
+                        numberOfMonths: 3,
+                        showButtonPanel: true,
+                        dateFormat: "yy-mm-dd",
+                        showOn: "button",
+                        buttonImage: "arquivos_web/imagens/calendar.gif",
+                        buttonImageOnly: true,
+                        changeMonth: true,
+                        changeYear: true
+                    });
+                    $( "#format" ).change(function() {
+                    $( "#datepicker" ).datepicker( "option", "dateFormat", "yy-mm-dd");
+                });
+            });
+        </script>
         <script>
             function dialogar(){
                 $(function() {
@@ -95,6 +147,7 @@
                                 <a href="index?log=Agenda&ac=executa"><li>Visualizar agenda</li></a>
                                 <a href="index?log=Espaco&ac=executa"><li>Lista de Espaços Físicos</li></a>
                                 <a href="index?log=Evento&ac=verMeusEventos"><li>Minhas Reservas</li></a>
+                                <a href="index?log=Evento&ac=criarEventos"><li>Reservar um espaço</li></a>
                                 <a href="index?log=Home&ac=testar"><li>testar outras acoes</li></a>                               
                             </ul>
                         </nav>

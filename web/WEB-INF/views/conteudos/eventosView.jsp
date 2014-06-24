@@ -1,20 +1,45 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:choose>
     <c:when test="${espaco != null}"> <!-- ==============================================================================  -->
-       
-        <div id="conteudoMeusEventos">
-            <h2 id="cabecalho">  <a href="index?log=Espaco">Lista de Espaços Físicos</a> &blacktriangleleft; <a href="index?log=Evento&espaco=${espaco}&dia=hoje">${espaco}</a> &blacktriangleleft; Eventos</h2>    
-            <div id="cont">
-                evento de hoje de ${espaco}
-                <c:forEach var="evento" items="${eventoGoogleDAO}">
-                    <b>${evento.espaco}</b><br>
-                    <span>${evento.motivo}</span>
-                </c:forEach>            
-            </div>
+        <!-- ==============================================================================  -->
+        <!-- (Arnaldo)  Conteudo para cadastrar uma reserva depois de clicar em um espaco =  -->
+        <!-- ==============================================================================  -->
+        <!-- ==============================================================================  -->
+        <div id="conteudoForm">
+            <h1 id="cabecalho">Formulário de Reserva</h1>
+            <form action="" method="post">
+                <h2>Espaço Físico
+                    <input type="text-area" id="espaco" disabled="true" name="espaco" value="${espaco}">
+                </h2>
+                <h2>Data:
+                    <input type="text-area" id="datepicker" size="30" value="click ao lado" disabled="true">
+                </h2>
+                <h2>Hora de início:
+                    <input type="text-area" id="hrinicio" value="00:00" maxlength="5" disabled="true">
+                </h2>
+                <h2>Hora de término: 
+                    <input type="text-area" id="hrtermino" value="00:00" maxlength="5" disabled="true">
+                </h2>
+                <h2>Nome: 
+                    <input type="text-area" disabled="true" id="nome"> 
+                </h2>
+                <h2>Motivos:</h2>
+                <h2>
+                    <textarea id="motivo" cols="5" rows="40" name="msg2"></textarea>
+                </h2>
+                <h2>Descrição:</h2>
+                <textarea id="descricao" cols="5" rows="40" name="msg"></textarea> <br><br>
+                <input id="salvar" type="submit" value="Salvar">
+                <input id="cancelar" type="button" value="Cancel">
+            </form>
         </div>
 
     </c:when>
     <c:when test="${eventoGoogleDAO != null}"> <!-- ==============================================================================  -->
+        <!-- ==============================================================================  -->
+        <!-- (EDIVANDRO) minhas reservas ==================================================  -->
+        <!-- ==============================================================================  -->
+        <!-- ==============================================================================  -->
         <div id="conteudoMinhasReservas">
             <h2 id="cabecalho">Minhas Reservas</h2>
 
@@ -35,7 +60,42 @@
         
     </c:when>
     <c:otherwise> <!-- ==============================================================================  -->
-        nada       
+        <!-- ==============================================================================  -->
+        <!-- ============ (Arnaldo)  Conteudo para cadastrar uma reserva diretamente =======  -->
+        <!-- ==============================================================================  -->
+        <!-- ==============================================================================  -->
+        <div id="conteudoForm">
+            <h1 id="cabecalho">Formulário de Reserva</h1>
+            <form action="" method="post">
+                <h2>Espaço Físico                    
+                    <select name="espaco" id="espaco">
+                        <c:forEach var="espacos" items="${mockEspacoDAO.espacos}">
+                            <option value="${espacos.nome}">${espacos.nome}</option>
+                        </c:forEach>        
+                    </select>
+                </h2>
+                <h2>Data:
+                    <input type="text-area" id="datepicker" size="30" value="click ao lado" disabled="true">
+                </h2>
+                <h2>Hora de início:
+                    <input type="text-area" id="hrinicio" value="00:00" maxlength="5" disabled="true">
+                </h2>
+                <h2>Hora de término: 
+                    <input type="text-area" id="hrtermino" value="00:00" maxlength="5" disabled="true">
+                </h2>
+                <h2>Nome: 
+                    <input type="text-area" disabled="true" id="nome"> 
+                </h2>
+                <h2>Motivos:</h2>
+                <h2>
+                    <textarea id="motivo" cols="5" rows="40" name="msg2"></textarea>
+                </h2>
+                <h2>Descrição:</h2>
+                <textarea id="descricao" cols="5" rows="40" name="msg"></textarea> <br><br>
+                <input id="salvar" type="submit" value="Salvar">
+                <input id="cancelar" type="button" value="Cancel">
+            </form>
+        </div>
     </c:otherwise>
 
 </c:choose>

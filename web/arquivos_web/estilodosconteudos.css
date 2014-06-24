@@ -167,3 +167,87 @@
     border-color: #989898;
     width: 150px;
 }
+
+
+/*  ==============  ESTILO DOS CONTEUDOS RELACIONADOS AO FORMULARIO DE CADASTRO DE RESERVAS =========================   */
+
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/06/2014, 08:39:26
+    Author     : Arnaldo Souza
+*/
+
+
+
+#conteudoForm{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: aqua;
+	color:rgba(0,0,0,1);
+	/*margin-left: 30px;*/
+}
+#conteudoForm h1{
+	/*font-size:36px;*/
+	font-style:inherit;
+	margin-top:auto ;
+}
+#conteudoForm form h2{
+	font-size:20px;
+	font-style:inherit;
+}
+#conteudoForm form h2 textarea#motivo{ 
+	width: 400px; 
+	height: 100px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#conteudoForm form  textarea#descricao{ 
+	width: 400px; 
+	height: 100px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#conteudoForm form h2 input#nome{
+	width: 500px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#conteudoForm form h2 input#datepicker{
+	width: 110px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#conteudoForm  h2 select#espaco{
+	width: 300px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#conteudoForm  h2 input#espaco{
+	width: 300px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#conteudoForm  h2 input#hrinicio{
+	width: 60px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#conteudoForm  h2 input#hrtermino{
+	width: 60px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}

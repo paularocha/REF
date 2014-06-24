@@ -28,15 +28,7 @@ public class MockEspacoDAO {
         espacos.add(esp4);
         espacos.add(esp5);		
         espacos.add(new EspacoBean("Auditorio", "para grandes eventos ", true));		
-        espacos.add(new EspacoBean("Auditorio", "para grandes eventos ", true));		
-        espacos.add(new EspacoBean("Auditorio", "para grandes eventos ", true));		
-        espacos.add(new EspacoBean("Auditorio", "para grandes eventos ", true));		
-        espacos.add(new EspacoBean("Auditorio", "para grandes eventos ", true));		
-        espacos.add(new EspacoBean("Auditorio", "para grandes eventos ", true));		
-        espacos.add(new EspacoBean("Auditorio", "para grandes eventos ", true));		
-        espacos.add(new EspacoBean("Auditorio", "para grandes eventos ", true));		
-        espacos.add(new EspacoBean("Auditorio", "para grandes eventos ", true));		
-        espacos.add(new EspacoBean("Auditorio", "para grandes eventos ", true));		
+        
     }
 
     public ArrayList<EspacoBean> getEspacos(){		

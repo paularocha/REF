@@ -77,5 +77,33 @@ public class EventoController// implements Controller
             return "/WEB-INF/views/homeView.jsp";
        }
     }
+    
+    
+    public String criarEventos(HttpServletRequest req, HttpServletResponse res) throws Exception {
+        
+        System.out.println("Executando a logica e redirecionando...");
+        String id = req.getParameter("id");
+        //UsuarioBean usuarioLogado = (UsuarioBean) req.getSession().getAttribute("usuarioLogado");
+        
+        //String criador = usuarioLogado.getNome();
+
+       if(SessaoController.isLoged(req, res)){
+            MockEspacoDAO mockEspacoDAO = new MockEspacoDAO();
+            //EventoGoogleDAO eventoGoogleDAO = new EventoGoogleDAO();
+            
+            //ArrayList<EventoGoogleBean> ev = eventoGoogleDAO.getListaDeTodosEventosDoUsuario(criador);
+            req.setAttribute("mockEspacoDAO", mockEspacoDAO);
+            String nomeArq = "conteudos/eventosView.jsp";
+            //req.setAttribute("eventoGoogleDAO", ev);
+            req.setAttribute("nomearq", nomeArq);
+            
+       }else{
+           String nomeArq = "conteudos/saudacaoView.jsp";
+            req.setAttribute("nomearq", nomeArq);
+            req.setAttribute("errado","true" );
+            
+       }
+       return "/WEB-INF/views/homeView.jsp";
+    }
 
 }

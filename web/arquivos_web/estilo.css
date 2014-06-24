@@ -220,7 +220,7 @@ input[type="password"]:focus.logar {
 }
  
 /*   estilos de conteudos gerais    */
-h2#cabecalho{
+#cabecalho{
     margin-left: 30px;
     border:1px solid goldenrod;
     background-color: buttonface;
@@ -231,7 +231,7 @@ h2#cabecalho{
     margin-bottom: 30px;  
 }
 
-h2#cabecalho a:hover{
+#cabecalho a:hover{
     color: green;     
 }
 
