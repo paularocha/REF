@@ -50,10 +50,15 @@
                 }
                 });
                 $(function() {
-                    $( "#hrinicio, #hrtermino" ).timespinner();
-                    var current = $( "#hrinicio, #hrtermino" ).timespinner( "value" );
+                    $( "#hrinicio" ).timespinner();
+                    var currentI = $( "#hrinicio" ).timespinner( "value" );
                     Globalize.culture( "de-DE" );
-                    $( "#hrinicio, #hrtermino" ).timespinner( "value", current );
+                    $( "#hrinicio" ).timespinner( "value", currentI );
+                    
+                    $( "#hrtermino" ).timespinner();
+                    var currentF = $( "#hrtermino" ).timespinner( "value" );
+                    Globalize.culture( "de-DE" );
+                    $( "#hrtermino" ).timespinner( "value", currentF );
                 });
             </script>
 
@@ -95,7 +100,7 @@
         <link type="text/css" rel="stylesheet" href="arquivos_web/estilodosconteudos.css" />
         <link href="arquivos_web/imagens/favicon.ico" rel="shortcut icon">
     </head>
-    <body>
+    <body id="SREF">
         <section id="barra-superior">
             <!--<div id="titulo"><h1><a href="index.php">SISTEMA DE RESERVA DE ESPAÃOS FÃSICOS</a></h1></div>-->
             <div id="menu-login">

@@ -12,7 +12,7 @@ root { display: block; }
 /** { margin: 0; padding: 0; border: 1px solid #000;}*/
 section, header, nav, article, footer { display: block; }
 html { overflow-y: scroll; }
-body { background: #DCDCDC; color: #000; }
+body#SREF { background: #DCDCDC; color: #000; font-size: 100%; }
 a { text-decoration: none; color: #000; outline: none; }
 
 /*=== BARRA SUPERIOR =========================================================*/

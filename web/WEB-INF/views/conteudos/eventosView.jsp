@@ -7,30 +7,29 @@
         <!-- ==============================================================================  -->
         <div id="conteudoForm">
             <h1 id="cabecalho">Formulário de Reserva</h1>
-            <form action="" method="post">
+            <form action="index?log=Evento&ac=criar" method="post">
                 <h2>Espaço Físico
-                    <input type="text-area" id="espaco" disabled="true" name="espaco" value="${espaco}">
+                    <input type="text-area" id="espaco" readonly="readonly" name="espaco" value="${espaco}">
                 </h2>
                 <h2>Data:
-                    <input type="text-area" id="datepicker" size="30" value="click ao lado" disabled="true">
+                    <input type="text" name="data" id="datepicker" size="30" value="click ao lado" readonly="readonly">
                 </h2>
                 <h2>Hora de início:
-                    <input type="text-area" id="hrinicio" value="00:00" maxlength="5" disabled="true">
+                    <input type="text" name="horaini" id="hrinicio" maxlength="5" readonly="readonly">
                 </h2>
                 <h2>Hora de término: 
-                    <input type="text-area" id="hrtermino" value="00:00" maxlength="5" disabled="true">
+                    <input type="text" name="horafim" id="hrtermino" maxlength="5" readonly="readonly">
                 </h2>
                 <h2>Nome: 
-                    <input type="text-area" disabled="true" id="nome"> 
+                    <input type="text-area" name="criador" value="${usuarioLogado.nome}" disabled="true" id="nome" readonly="readonly"> 
                 </h2>
                 <h2>Motivos:</h2>
                 <h2>
-                    <textarea id="motivo" cols="5" rows="40" name="msg2"></textarea>
+                    <textarea id="motivo" name="motivo" cols="5" rows="40" name="msg2"></textarea>
                 </h2>
-                <h2>Descrição:</h2>
-                <textarea id="descricao" cols="5" rows="40" name="msg"></textarea> <br><br>
+                
                 <input id="salvar" type="submit" value="Salvar">
-                <input id="cancelar" type="button" value="Cancel">
+                <input id="cancelar" type="reset" value="Cancel">
             </form>
         </div>
 
@@ -66,7 +65,7 @@
         <!-- ==============================================================================  -->
         <div id="conteudoForm">
             <h1 id="cabecalho">Formulário de Reserva</h1>
-            <form action="" method="post">
+            <form action="index?log=Evento&ac=criar" method="post">
                 <h2>Espaço Físico                    
                     <select name="espaco" id="espaco">
                         <c:forEach var="espacos" items="${mockEspacoDAO.espacos}">
@@ -74,26 +73,25 @@
                         </c:forEach>        
                     </select>
                 </h2>
-                <h2>Data:
-                    <input type="text-area" id="datepicker" size="30" value="click ao lado" disabled="true">
+                 <h2>Data:
+                    <input type="text" name="data" id="datepicker" size="30" value="click ao lado" readonly="readonly">
                 </h2>
                 <h2>Hora de início:
-                    <input type="text-area" id="hrinicio" value="00:00" maxlength="5" disabled="true">
+                    <input type="text" name="horaini" id="hrinicio" maxlength="5" readonly="readonly">
                 </h2>
                 <h2>Hora de término: 
-                    <input type="text-area" id="hrtermino" value="00:00" maxlength="5" disabled="true">
+                    <input type="text" name="horafim" id="hrtermino" maxlength="5" readonly="readonly">
                 </h2>
                 <h2>Nome: 
-                    <input type="text-area" disabled="true" id="nome"> 
+                    <input type="text-area" name="criador" value="${usuarioLogado.nome}" disabled="true" id="nome" readonly="readonly"> 
                 </h2>
                 <h2>Motivos:</h2>
                 <h2>
-                    <textarea id="motivo" cols="5" rows="40" name="msg2"></textarea>
+                    <textarea id="motivo" name="motivo" cols="5" rows="40" name="msg2"></textarea>
                 </h2>
-                <h2>Descrição:</h2>
-                <textarea id="descricao" cols="5" rows="40" name="msg"></textarea> <br><br>
+                
                 <input id="salvar" type="submit" value="Salvar">
-                <input id="cancelar" type="button" value="Cancel">
+                <input id="cancelar" type="reset" value="Cancel">
             </form>
         </div>
     </c:otherwise>

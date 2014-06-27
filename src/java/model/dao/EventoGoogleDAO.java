@@ -9,6 +9,7 @@ import com.google.api.client.util.DateTime;
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.CalendarScopes;
 import com.google.api.services.calendar.model.Event;
+import com.google.api.services.calendar.model.Event.Creator;
 import com.google.api.services.calendar.model.EventDateTime;
 import com.google.api.services.calendar.model.Events;
 import java.io.File;
@@ -16,6 +17,9 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 import model.beans.EventoGoogleBean;
 
 
@@ -138,7 +142,30 @@ public class EventoGoogleDAO {
     
     public void deletarEvento(String eventoId){}
     
-    public String criarEvento(EventoGoogleBean eventoGoogleBean){        
+    public String criarEvento(EventoGoogleBean eventoGoogleBean) throws IOException{        
+        
+        Event event = new Event();
+        
+        event.setSummary(eventoGoogleBean.getMotivo());
+        event.setLocation(eventoGoogleBean.getEspaco());
+        //event.setCreator(null)
+        //não esquecer que  mês é menos 1
+
+        
+        Date startDate =  new Date(eventoGoogleBean.getIni().getTimeInMillis());
+        Date endDate = new Date(eventoGoogleBean.getFim().getTimeInMillis());
+        
+        DateTime start = new DateTime(startDate, TimeZone.getTimeZone("UTC"));
+        event.setStart(new EventDateTime().setDateTime(start));
+        
+        DateTime end = new DateTime(endDate, TimeZone.getTimeZone("UTC"));
+        event.setEnd(new EventDateTime().setDateTime(end));
+
+        Event createdEvent = service.events().insert("primary", event).execute();
+        System.out.println(createdEvent.getId());
+        System.out.println(createdEvent.getStart().getDateTime().toStringRfc3339());
+        System.out.println(createdEvent.getEnd().getDateTime().toStringRfc3339());
+        
         return "idEventCreate";
     }
     

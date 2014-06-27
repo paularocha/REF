@@ -1,5 +1,7 @@
 package model.beans;
 
+import java.util.GregorianCalendar;
+
 public class EventoGoogleBean {
     private String eventoGoogleId;    
     private String motivo;
@@ -9,6 +11,8 @@ public class EventoGoogleBean {
     private String data;
     private String horaInicial;
     private String horaFinal;
+    private GregorianCalendar ini;
+    private GregorianCalendar fim;
     
     private String dataHoraInicial;
     private String dataHoraFinal;
@@ -39,6 +43,24 @@ public class EventoGoogleBean {
     public EventoGoogleBean setMotivo(String motivo) {
         this.motivo = motivo;
          return this;
+    }
+
+    public GregorianCalendar getIni() {
+        return ini;
+    }
+
+    public EventoGoogleBean setIni(GregorianCalendar ini) {
+        this.ini = ini;
+        return this;
+    }
+
+    public GregorianCalendar getFim() {
+        return fim;
+    }
+
+    public EventoGoogleBean setFim(GregorianCalendar fim) {
+        this.fim = fim;
+        return this;
     }
 
     
