@@ -61,8 +61,28 @@
                     $( "#hrtermino" ).timespinner( "value", currentF );
                 });
             </script>
-
-        
+            <script>
+            //(Sebastião) -> Traduzido e organizado o formato do calendário
+            $(function() { $("#datepicker").datepicker({
+            numberOfMonths: 3,
+            changeMonth: true,
+            changeYear: true,
+            showOn: "button",
+            buttonImage: "arquivos_web/imagens/calendar.gif",
+            buttonImageOnly: true,
+		//showButtonPanel:true,
+		
+		dateFormat: 'dd/mm/yy',
+            dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
+            dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+            dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+            monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+            monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
+		
+            });
+        });
+        </script>
+        <!--
         <script>
             $(function() {
                     $( "#datepicker" ).datepicker({
@@ -80,6 +100,7 @@
                 });
             });
         </script>
+        -->
         <script>
             function dialogar(){
                 $(function() {
