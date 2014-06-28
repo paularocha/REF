@@ -122,9 +122,9 @@ public class EventoController extends HttpServlet {
         //System.out.println("criador: " + criador);
         
         
-        int year = Integer.parseInt(data.split("-")[0]);
-        int month = Integer.parseInt(data.split("-")[1]);
-        int dayOfMonth = Integer.parseInt(data.split("-")[2]);
+        int year = Integer.parseInt(data.split("/")[0]);
+        int month = Integer.parseInt(data.split("/")[1]);
+        int dayOfMonth = Integer.parseInt(data.split("/")[2]);
         
         int hourOfDayI = Integer.parseInt(horaini.split(":")[0]);
         int minuteI = Integer.parseInt(horaini.split(":")[1]);
