@@ -24,7 +24,7 @@ public class SessaoController {
             //response.sendRedirect("");  
         //    request.getRequestDispatcher("/WEB-INF/views/homeView.jsp").forward(request, response);
         }else{
-            request.setAttribute("errado","true");
+            request.setAttribute("popup","Ei, você deve ter errado ou não está cadastrado!");
         }
 
 

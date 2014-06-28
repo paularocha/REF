@@ -3,14 +3,24 @@
 package model.beans;
 
 public class EspacoBean {
+    private String agendaId;
     private String nome;
     private String informacoes;
     private boolean confirmavel;
 
-    public EspacoBean(String nome, String informacoes, boolean confirmavel) {
+    public EspacoBean(String agendaId,String nome, String informacoes, boolean confirmavel) {
+        this.agendaId = agendaId;
         this.nome = nome;
         this.informacoes = informacoes;
         this.confirmavel = confirmavel;
+    }
+
+    public String getAgendaId() {
+        return agendaId;
+    }
+
+    public void setAgendaId(String agendaId) {
+        this.agendaId = agendaId;
     }
 
     

@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:choose>
-    <c:when test="${espaco != null}"> <!-- ==============================================================================  -->
+    <c:when test="${espaco != null}"> 
+        <!-- ==============================================================================  -->
         <!-- ==============================================================================  -->
         <!-- (Arnaldo)  Conteudo para cadastrar uma reserva depois de clicar em um espaco =  -->
         <!-- ==============================================================================  -->
@@ -9,7 +10,8 @@
             <h1 id="cabecalho">Formulário de Reserva</h1>
             <form action="index?log=Evento&ac=criar" method="post">
                 <h2>Espaço Físico
-                    <input type="text-area" id="espaco" readonly="readonly" name="espaco" value="${espaco}">
+                    <input type="text-area" id="espaco" readonly="readonly" name="espaco" value="${espaco.nome}">
+                    <input type="hidden" name="agendaId" value="${espaco.agendaId}">
                 </h2>
                 <h2>Data:
                     <input type="text" name="data" id="datepicker" size="30" value="click ao lado" readonly="readonly">
@@ -34,7 +36,8 @@
         </div>
 
     </c:when>
-    <c:when test="${eventoGoogleDAO != null}"> <!-- ==============================================================================  -->
+    <c:when test="${eventoGoogleDAO != null}"> 
+        <!-- ==============================================================================  -->
         <!-- ==============================================================================  -->
         <!-- (EDIVANDRO) minhas reservas ==================================================  -->
         <!-- ==============================================================================  -->
@@ -58,7 +61,8 @@
         </div>
         
     </c:when>
-    <c:otherwise> <!-- ==============================================================================  -->
+    <c:otherwise> 
+        <!-- ==============================================================================  -->
         <!-- ==============================================================================  -->
         <!-- ============ (Arnaldo)  Conteudo para cadastrar uma reserva diretamente =======  -->
         <!-- ==============================================================================  -->
@@ -67,9 +71,9 @@
             <h1 id="cabecalho">Formulário de Reserva</h1>
             <form action="index?log=Evento&ac=criar" method="post">
                 <h2>Espaço Físico                    
-                    <select name="espaco" id="espaco">
+                    <select name="agendaId" id="espaco">
                         <c:forEach var="espacos" items="${mockEspacoDAO.espacos}">
-                            <option value="${espacos.nome}">${espacos.nome}</option>
+                            <option value="${espacos.agendaId}">${espacos.nome}</option>
                         </c:forEach>        
                     </select>
                 </h2>
@@ -89,7 +93,6 @@
                 <h2>
                     <textarea id="motivo" name="motivo" cols="5" rows="40" name="msg2"></textarea>
                 </h2>
-                
                 <input id="salvar" type="submit" value="Salvar">
                 <input id="cancelar" type="reset" value="Cancel">
             </form>

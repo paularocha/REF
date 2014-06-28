@@ -36,9 +36,10 @@ public class EventoGoogleDAO {
     
     
     
-    public EventoGoogleDAO() throws IOException{
+    public EventoGoogleDAO(String agendaId) throws IOException{
         File file = new File("");
-		System.out.println("absolute: " + file.getAbsolutePath());
+        this.agendaId = agendaId;
+        System.out.println("absolute: " + file.getAbsolutePath());
 
         try {
             credential = new GoogleCredential.Builder().setTransport(HTTP_TRANSPORT)
@@ -64,9 +65,7 @@ public class EventoGoogleDAO {
 
     }    
     
-    public EventoGoogleDAO(String agendaId) {        
-        this.agendaId = agendaId;
-    }
+    
     
     public ArrayList<EventoGoogleBean> getListaDeTodosEventosDoUsuario(String nome) throws IOException{    
         listaDeTodosEventosDoUsuario = new ArrayList<>();
@@ -161,7 +160,7 @@ public class EventoGoogleDAO {
         DateTime end = new DateTime(endDate, TimeZone.getTimeZone("UTC"));
         event.setEnd(new EventDateTime().setDateTime(end));
 
-        Event createdEvent = service.events().insert("primary", event).execute();
+        Event createdEvent = service.events().insert(this.agendaId, event).execute();
         System.out.println(createdEvent.getId());
         System.out.println(createdEvent.getStart().getDateTime().toStringRfc3339());
         System.out.println(createdEvent.getEnd().getDateTime().toStringRfc3339());

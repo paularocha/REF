@@ -72,7 +72,7 @@
             buttonImageOnly: true,
 		//showButtonPanel:true,
 		
-		dateFormat: 'dd/mm/yy',
+		dateFormat: "yy-mm-dd",
             dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
             dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
             dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
@@ -149,8 +149,12 @@
                         </form>
                         </c:otherwise>
                     </c:choose>                 
-                    <c:if test="${errado eq 'true'}">
-                        <script>dialogar();</script>
+                    <c:if test="${popup != null}">
+                        <script>
+                            ///var janela = document.getElementById("dialog");
+                            //janela.innerHTML = "<p>oi</p>";
+                            dialogar();
+                        </script>
                     </c:if>
                 </div>
             </div>
@@ -230,7 +234,7 @@
         <section id="barra-inferior"><a href="index.php">Copyright &copy; 2014</a></section>
         
         <div id="dialog" title="Erro" style="display: none;">
-            <p>Você não está autorizado.</p>
+            <p id="msgpopup">${popup}</p>
         </div>
     </body>
 </html>

@@ -24,12 +24,13 @@ public class EventoController extends HttpServlet {
        
         if(SessaoController.isLoged(req, res)){
             //EventoGoogleDAO eventoGoogleDAO = new EventoGoogleDAO();
-            
+            MockEspacoDAO mockEspacoDAO = new MockEspacoDAO();
+            EspacoBean espacoBean = mockEspacoDAO.getEspacoPorNome(espaco);
             //ArrayList<EventoGoogleBean> ev = eventoGoogleDAO.getListaDeTodosEventosDoUsuario(criador);
             String nomeArq = "conteudos/eventosView.jsp";
             //req.setAttribute("eventoGoogleDAO", eventoGoogleDAO);
             req.setAttribute("nomearq", nomeArq);
-            req.setAttribute("espaco", espaco);
+            req.setAttribute("espaco", espacoBean);
             
         }else{
            String nomeArq = "conteudos/saudacaoView.jsp";
@@ -44,12 +45,13 @@ public class EventoController extends HttpServlet {
         
         System.out.println("Executando a logica e redirecionando...");
         String id = req.getParameter("id");
+        String agendaId = req.getParameter("agendaId");
         UsuarioBean usuarioLogado = (UsuarioBean) req.getSession().getAttribute("usuarioLogado");
         
         String criador = usuarioLogado.getNome();
 
        if(SessaoController.isLoged(req, res)){
-            EventoGoogleDAO eventoGoogleDAO = new EventoGoogleDAO();
+            EventoGoogleDAO eventoGoogleDAO = new EventoGoogleDAO(agendaId);
             
             ArrayList<EventoGoogleBean> ev = eventoGoogleDAO.getListaDeTodosEventosDoUsuario(criador);
             String nomeArq = "conteudos/eventosView.jsp";
@@ -112,6 +114,7 @@ public class EventoController extends HttpServlet {
         
         System.out.println("Executando a logica e redirecionando para criar...");
         UsuarioBean usuarioLogado = (UsuarioBean) req.getSession().getAttribute("usuarioLogado");
+        String agendaId = req.getParameter("agendaId");
         String motivo = req.getParameter("motivo");
         String espaco = req.getParameter("espaco");
         String data = req.getParameter("data");
@@ -122,9 +125,9 @@ public class EventoController extends HttpServlet {
         //System.out.println("criador: " + criador);
         
         
-        int year = Integer.parseInt(data.split("/")[0]);
-        int month = Integer.parseInt(data.split("/")[1]);
-        int dayOfMonth = Integer.parseInt(data.split("/")[2]);
+        int year = Integer.parseInt(data.split("-")[0]);
+        int month = Integer.parseInt(data.split("-")[1]);
+        int dayOfMonth = Integer.parseInt(data.split("-")[2]);
         
         int hourOfDayI = Integer.parseInt(horaini.split(":")[0]);
         int minuteI = Integer.parseInt(horaini.split(":")[1]);
@@ -138,7 +141,7 @@ public class EventoController extends HttpServlet {
 
        if(SessaoController.isLoged(req, res)){
             
-            EventoGoogleDAO eventoGoogleDAO = new EventoGoogleDAO();
+            EventoGoogleDAO eventoGoogleDAO = new EventoGoogleDAO(agendaId);
             
             EventoGoogleBean ev = new EventoGoogleBean()
                     .setEspaco(espaco)
@@ -148,7 +151,14 @@ public class EventoController extends HttpServlet {
                     .setFim(fim);
             eventoGoogleDAO.criarEvento(ev);
             
-            String nomeArq = "conteudos/eventosView.jsp";
+            req.setAttribute("popup","Reserva efetuada com sucesso!!<br>" 
+                    + "Espaço: " + espaco + "<br>"
+                    + "Motivo: " + motivo + "<br>"
+                    + "Data: " + data + "<br>"
+                    + "inicio: " + horaini + "<br>"
+                    + "fim: " + horafim + "<br>"
+            );
+            String nomeArq = "conteudos/saudacaoView.jsp";
             req.setAttribute("nomearq", nomeArq);
             
        }else{

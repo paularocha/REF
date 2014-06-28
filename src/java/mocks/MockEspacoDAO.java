@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class MockEspacoDAO {
 	
     ArrayList<EspacoBean> espacos;
+    EspacoBean espacoPorNome;
     EspacoBean esp1;
     EspacoBean esp2;
     EspacoBean esp3;
@@ -16,21 +17,24 @@ public class MockEspacoDAO {
 
     public MockEspacoDAO(){
         espacos = new ArrayList<>();
-        esp1 = new EspacoBean("Lab-40", "tem 40 pc's", true);
-        esp2 = new EspacoBean("Lab-30", "tem 30 pc's", true);
-        esp3 = new EspacoBean("Auditorio", "para grandes eventos ", true);
-        esp4 = new EspacoBean("Lab matematica", "so para os matematicos", true);
-        esp5 = new EspacoBean("Piscina", "para praticas esportivas", true);
+        esp1 = new EspacoBean("qdakco3f5om12i5e0qnpr3g6eg@group.calendar.google.com", "Lab-40", "tem 40 pc's", true);
+        esp2 = new EspacoBean("r4i345anbgb13k0j0hjn2f0a28@group.calendar.google.com","Lab-30", "tem 30 pc's", true);
 
         espacos.add(esp1);
         espacos.add(esp2);
-        espacos.add(esp3);
-        espacos.add(esp4);
-        espacos.add(esp5);		
-        espacos.add(new EspacoBean("Auditorio", "para grandes eventos ", true));		
+        
         
     }
 
+    public EspacoBean getEspacoPorNome(String nome){
+        for (EspacoBean espacoBean : espacos) {
+            if (espacoBean.getNome().equals(nome)) {
+                return espacoBean;		
+            }
+        }
+        return null;		
+    }
+    
     public ArrayList<EspacoBean> getEspacos(){		
             return espacos;		
     }
