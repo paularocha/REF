@@ -20,6 +20,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.beans.EventoGoogleBean;
 
 
@@ -139,13 +141,22 @@ public class EventoGoogleDAO {
         return listaDeTodosEventos;
     }
     
-    public void deletarEvento(String eventoId){}
+    public boolean deletarEvento(String agendaGoogleId, String eventoId){
+        try {
+            service.events().delete(agendaGoogleId, eventoId).execute();
+            return true;
+        } catch (IOException ex) {
+            Logger.getLogger(EventoGoogleDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        
+    }
     
     public String criarEvento(EventoGoogleBean eventoGoogleBean) throws IOException{        
         
         Event event = new Event();
         
-        event.setSummary(eventoGoogleBean.getMotivo());
+        event.setSummary(eventoGoogleBean.getNomeDoCriador() + " - " + eventoGoogleBean.getMotivo());
         event.setLocation(eventoGoogleBean.getEspaco());
         //event.setCreator(null)
         //não esquecer que  mês é menos 1

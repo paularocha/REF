@@ -23,8 +23,8 @@ public class HomeController {
             //req.getS
             HttpSession sessao = req.getSession();
             UsuarioBean usuarioLogado = (UsuarioBean) sessao.getAttribute("usuarioLogado");
-            System.out.println("tiipo de usuario: " + usuarioLogado.getCargo());
-            if(usuarioLogado.getCargo().equals("adm")){
+            System.out.println("tiipo de usuario: " + usuarioLogado.getNivel());
+            if(usuarioLogado.getNivel().equals("adm")){
                 System.out.println("Acao permitida apenas a este usuário");
             }
             String nomeArq = "conteudos/testeView.jsp";

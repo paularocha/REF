@@ -4,7 +4,7 @@
     
     <h2 id="cabecalho">  <a href="javascript:;">Lista de Espaços Físicos</a></h2>
     <div id="cont">
-        <c:if test="${usuarioLogado.cargo eq 'adm'}">
+        <c:if test="${usuarioLogado.nivel eq 'adm'}">
            <!-- <div id="pastilhadeadd">
                 <a href="index?log=Espaco&ac=criar">
                     <b>+</b><br>

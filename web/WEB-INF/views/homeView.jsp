@@ -16,6 +16,14 @@
                 });
             });*/
         </script>
+        <script>
+            function fechar(){
+               document.getElementById('conteudoJanelaForm').style.display = "none";
+            }
+            function mostrarJanela(){
+               document.getElementById('conteudoJanelaForm').style.display = "block";
+            }
+        </script>
         
          <meta charset="utf-8">
         <title>jQuery UI Dialog - Default functionality</title>
@@ -133,7 +141,7 @@
                 <div id="usuario">
                     <c:choose>
                         <c:when test="${usuarioLogado != null}" >
-                            <b>Saudações, ${usuarioLogado.nome}<a href="index?log=Sessao&ac=efetuarLogout"> sair</a></b>
+                            <b>Seja Bem-vindo, ${usuarioLogado.nome}.<a href="index?log=Sessao&ac=efetuarLogout"> sair</a></b>
                         </c:when>    
 
                         <c:otherwise>
@@ -169,7 +177,20 @@
 
             
                 <c:choose>
-                    <c:when test="${usuarioLogado.cargo eq 'aluno'}">
+                    <c:when test="${usuarioLogado.nivel eq 'aluno'}">
+                        <aside id="flutuante">
+                        <nav class="site">
+                            <h3 class="h3_center">Menu</h3>
+                            <ul>
+                                <a href="index?log=Agenda&ac=executa"><li>Visualizar agenda</li></a>
+                                <a href="index?log=Espaco&ac=executa"><li>Lista de Espaços Físicos</li></a>
+                                <a href="index?log=Evento&ac=verMeusEventos"><li>Minhas Reservas</li></a>
+                                <a href="index?log=Evento&ac=criarEventos"><li>Reservar um espaço</li></a>                                
+                            </ul>
+                        </nav>
+                        </aside>
+                    </c:when>
+                    <c:when test="${usuarioLogado.nivel eq 'prof'}">
                         <aside id="flutuante">
                         <nav class="site">
                             <h3 class="h3_center">Menu</h3>
@@ -178,13 +199,12 @@
                                 <a href="index?log=Espaco&ac=executa"><li>Lista de Espaços Físicos</li></a>
                                 <a href="index?log=Evento&ac=verMeusEventos"><li>Minhas Reservas</li></a>
                                 <a href="index?log=Evento&ac=criarEventos"><li>Reservar um espaço</li></a>
-                                <a href="index?log=Home&ac=testar"><li>testar outras acoes</li></a>                               
                             </ul>
                         </nav>
                         </aside>
                     </c:when>
                     
-                    <c:when test="${usuarioLogado.cargo eq 'usuarioadm'}">
+                    <c:when test="${usuarioLogado.nivel eq 'usuarioadm'}">
                         <aside id="flutuante">
                         <nav class="site">
                             <h3 class="h3_center">Menu</h3>
@@ -193,13 +213,11 @@
                                 <a href="index?log=Espaco&ac=executa"><li>Lista de Espaços Físicos</li></a>
                                 <a href="index?log=MinhasReservas&ac=executa"><li>Minhas Reservas</li></a>
                                 <a href="index?log=MinhasReservas&ac=executa"><li>Reservas para confirmar</li></a>
-                                <a href="index?log=Home&ac=testar"><li>testar outras acoes</li></a>
-
                             </ul>
                         </nav>
                         </aside>
                     </c:when>
-                    <c:when test="${usuarioLogado.cargo eq 'adm'}">
+                    <c:when test="${usuarioLogado.nivel eq 'adm'}">
                         <aside id="flutuante">
                         <nav class="site">
                             <h3 class="h3_center">Menu</h3>
@@ -208,8 +226,6 @@
                                 <a href="index?log=Agenda"><li>Cadastros para confirmar</li></a>
                                 <a href="index?log=Espaco"><li>Lista de Espaços Físicos</li></a>
                                 <a href="index?log=MinhasReservas&ac=executa"><li>Reservas para confirmar</li></a>
-                                <a href="index?log=Home&ac=testar"><li>testar outras acoes</li></a>
-
                             </ul>
                         </nav>
                         </aside>
@@ -233,7 +249,7 @@
         </section>
         <section id="barra-inferior"><a href="index.php">Copyright &copy; 2014</a></section>
         
-        <div id="dialog" title="Erro" style="display: none;">
+        <div id="dialog" title="Mensagem" style="display: none;">
             <p id="msgpopup">${popup}</p>
         </div>
     </body>

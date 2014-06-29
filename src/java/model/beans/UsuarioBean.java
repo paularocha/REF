@@ -5,22 +5,22 @@ public class UsuarioBean {
     private String login;
     private String senha;
     private String email;
-    private String cargo;
+    private String nivel;
     
-    public UsuarioBean(String nome, String login, String senha, String email,String cargo) {
+    public UsuarioBean(String nome, String login, String senha, String email,String nivel) {
         this.nome = nome;
         this.login = login;
         this.senha = senha;
         this.email = email;
-        this.cargo = cargo;
+        this.nivel = nivel;
     }
 
-    public String getCargo() {
-        return cargo;
+    public String getNivel() {
+        return nivel;
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
     }
 
     public String getNome() {

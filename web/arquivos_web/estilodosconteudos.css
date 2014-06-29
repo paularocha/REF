@@ -44,7 +44,9 @@
 }
 
 #conteudoespaco #pastilha a span,#pastilhadeadd a span{
-	font-size: 17px;
+	font-size: 12px;
+        text-indent: 50px;
+        line-height: 100%;
 	
 }
 
@@ -232,6 +234,101 @@
 	font-family:Arial, Helvetica, sans-serif;
 }
 #conteudoForm  h2 input#hrtermino{
+	width: 60px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*  ==============  ESTILO DOS CONTEUDOS RELACIONADOS A JANELA de FORMULARIO DE CADASTRO DE RESERVAS =========================   */
+#conteudoJanelaForm{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: rgb(38,158,198);
+        width: 700px;
+        height: 430px;
+        position: fixed;
+        top: 50px;
+        left: 300px;
+	color:rgba(0,0,0,1);
+        display: none;
+        border: 7px solid scrollbar ;
+        padding-left: 30px;
+        padding-top: 30px;
+        border-radius: 7px;
+        box-shadow: 4px 4px 5px #888888;
+	/*margin-left: 30px;*/
+}
+#conteudoJanelaForm a{
+    float: right;
+    
+}
+#conteudoJanelaForm h1{
+	/*font-size:36px;*/
+	font-style:inherit;
+	margin-top:auto ;
+}
+#conteudoJanelaForm form h2{
+	font-size:20px;
+	font-style:inherit;
+}
+#conteudoJanelaForm form h2 textarea#motivo{ 
+	width: 400px; 
+	height: 100px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#conteudoJanelaForm form  textarea#descricao{ 
+	width: 400px; 
+	height: 100px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#conteudoJanelaForm form h2 input#nome{
+	width: 500px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#conteudoJanelaForm form h2 input#datepicker{
+	width: 110px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#conteudoJanelaForm  h2 select#espaco{
+	width: 300px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#conteudoJanelaForm  h2 input#espaco{
+	width: 300px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#conteudoJanelaForm  h2 input#hrinicio{
+	width: 60px; 
+	resize:none;
+	font-size:20px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#conteudoJanelaForm  h2 input#hrtermino{
 	width: 60px; 
 	resize:none;
 	font-size:20px;
