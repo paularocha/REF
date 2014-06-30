@@ -2,7 +2,7 @@
 
 <div id="conteudo" style="text-align: justify;">
 
-<h3>DISCRIÇÃO DO SISTEMA</h3>
+<h3>Sistema de reservas de espaços físicos - UFPA - CUNCAST</h3>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O sistema de reserva de espaços fisicos visa auxiliar as atividades cotidianas referentes 
 a alocação dos recursos disponiveis, em especial forma atendidas as requisições de procedimentos
