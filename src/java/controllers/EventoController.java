@@ -135,7 +135,7 @@ public class EventoController extends HttpServlet {
         int hourOfDayF = Integer.parseInt(horafim.split(":")[0]);
         int minuteF = Integer.parseInt(horafim.split(":")[1]);
         
-        if(hourOfDayF > 00 || (hourOfDayF == 00 && minuteF > 00)){
+        if(hourOfDayF < hourOfDayI ){
             String nomeArq = "conteudos/saudacaoView.jsp";
             req.setAttribute("nomearq", nomeArq);
             req.setAttribute("popup","Ei, O tempo final ultrapassou o dia de hoje. (hora final tem que ser <= 00:00)" );
