@@ -47,7 +47,7 @@ public class ControllerServlet extends HttpServlet {
            //String pagina = logica.executa(request, response);
 
            request.getRequestDispatcher(pagina).forward(request, response);
-
+         
        } catch (Exception e) {
            throw new ServletException(
              "A lógica de negócios causou uma exceção", e);

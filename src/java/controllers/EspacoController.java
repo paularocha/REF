@@ -27,7 +27,7 @@ public class EspacoController{
        }else{
            String nomeArq = "conteudos/saudacaoView.jsp";
             req.setAttribute("nomearq", nomeArq);
-            req.setAttribute("errado","true" );
+            req.setAttribute("popup","voce precisa entrar novamente!!" );
             return "/WEB-INF/views/homeView.jsp";
        }
     }

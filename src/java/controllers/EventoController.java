@@ -135,6 +135,12 @@ public class EventoController extends HttpServlet {
         int hourOfDayF = Integer.parseInt(horafim.split(":")[0]);
         int minuteF = Integer.parseInt(horafim.split(":")[1]);
         
+        if(hourOfDayF > 00 || (hourOfDayF == 00 && minuteF > 00)){
+            String nomeArq = "conteudos/saudacaoView.jsp";
+            req.setAttribute("nomearq", nomeArq);
+            req.setAttribute("popup","Ei, O tempo final ultrapassou o dia de hoje. (hora final tem que ser <= 00:00)" );
+            return "/WEB-INF/views/homeView.jsp";
+        }
         
         GregorianCalendar ini = new GregorianCalendar(year, month-1, dayOfMonth, hourOfDayI, minuteI);
         GregorianCalendar fim = new GregorianCalendar(year, month-1, dayOfMonth, hourOfDayF, minuteF);
@@ -149,7 +155,7 @@ public class EventoController extends HttpServlet {
                     .setNomeDoCriador(criador)
                     .setIni(ini)
                     .setFim(fim);
-            eventoGoogleDAO.criarEvento(ev);
+            String link = eventoGoogleDAO.criarEvento(ev);
             
             req.setAttribute("popup","Reserva efetuada com sucesso!!<br>" 
                     + "Espaço: " + espaco + "<br>"
@@ -157,6 +163,7 @@ public class EventoController extends HttpServlet {
                     + "Data: " + data + "<br>"
                     + "inicio: " + horaini + "<br>"
                     + "fim: " + horafim + "<br>"
+                    + "<a href='" + link + "' target='_blanck'> clique aqui</a> para ver."
             );
             String nomeArq = "conteudos/saudacaoView.jsp";
             req.setAttribute("nomearq", nomeArq);
@@ -164,7 +171,7 @@ public class EventoController extends HttpServlet {
        }else{
            String nomeArq = "conteudos/saudacaoView.jsp";
             req.setAttribute("nomearq", nomeArq);
-            req.setAttribute("errado","true" );
+            req.setAttribute("popup","Ocorreu um erro durante a submissão!!" );
             
        }
        return "/WEB-INF/views/homeView.jsp";

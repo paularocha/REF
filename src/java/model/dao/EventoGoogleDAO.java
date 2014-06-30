@@ -158,7 +158,7 @@ public class EventoGoogleDAO {
         
         event.setSummary(eventoGoogleBean.getNomeDoCriador() + " - " + eventoGoogleBean.getMotivo());
         event.setLocation(eventoGoogleBean.getEspaco());
-        //event.setCreator(null)
+        event.setDescription(eventoGoogleBean.getNomeDoCriador());
         //não esquecer que  mês é menos 1
 
         
@@ -176,7 +176,7 @@ public class EventoGoogleDAO {
         System.out.println(createdEvent.getStart().getDateTime().toStringRfc3339());
         System.out.println(createdEvent.getEnd().getDateTime().toStringRfc3339());
         
-        return "idEventCreate";
+        return createdEvent.getHtmlLink();
     }
     
     public String atualizarEvento(String eventoId){

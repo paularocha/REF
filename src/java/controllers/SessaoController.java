@@ -20,18 +20,14 @@ public class SessaoController {
             UsuarioBean usuario = usuarioDAO.getUsuario(login,senha);
 
             sessao.setAttribute("usuarioLogado", usuario);
-
+            //response.sendRedirect("http://localhost:8085/SREF");  
             //response.sendRedirect("");  
         //    request.getRequestDispatcher("/WEB-INF/views/homeView.jsp").forward(request, response);
         }else{
             request.setAttribute("popup","Ei, você deve ter errado ou não está cadastrado!");
         }
-
-
-
-            
-            String nomeArq = "conteudos/saudacaoView.jsp";
-            request.setAttribute("nomearq", nomeArq);
+        String nomeArq = "conteudos/saudacaoView.jsp";
+        request.setAttribute("nomearq", nomeArq);
         return "/WEB-INF/views/homeView.jsp";
   }
     
